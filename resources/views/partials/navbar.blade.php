@@ -39,7 +39,7 @@
                 </svg>
             </button>
             <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse pl-5">
-                <a href="/register"
+                <a href="/login"
                     class="px-4 py-2 text-sm font-medium text-center text-blue-200 bg-blue-900 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Sign
                     up / Sign in</a>
             </div>

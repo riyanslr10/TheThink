@@ -3,9 +3,7 @@
 @section('container')
 
 <div class="container">
-
-    <div class="bg-blue-200">
-        {{-- CAROUSEL --}}
+    {{-- CAROUSEL --}}
         <div id="default-carousel" class="relative w-full" data-carousel="slide">
             <!-- Carousel wrapper -->
             <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
@@ -39,6 +37,7 @@
                         alt="...">
                 </div>
             </div>
+        </div>
 
             {{-- image 1 --}}
             <div class="grid grid-cols-1 gap-4 ml-44 mt-15 md:grid-cols-1 lg:grid-cols-2 pt-20">
@@ -89,6 +88,7 @@
                             PDF</button>
                     </div>
                 </a>
+
                 {{-- image 3 --}}
                 <a href="#"
                     class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
@@ -184,18 +184,16 @@
                     </div>
                 </a>
             </div>
-
-            <div class="flex justify-center pt-7 pb-7">
-                <button type="button"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">View
-                    All Product
-                </button>
-            </div>
-
+            {{-- buttun view all --}}
+                <div class="flex justify-center pt-7 pb-7">
+                    <button type="button"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">View
+                        All Product</button>
+                </div>
         </div>
     </div>
-</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+
 
 @endsection
