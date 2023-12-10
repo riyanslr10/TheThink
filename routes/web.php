@@ -19,3 +19,9 @@ Route::get('/', function () {
     return view('home');
 });
 
+
+
+
+Route::get('/info', function () {
+    return view('information.information');
+});
