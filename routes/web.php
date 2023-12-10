@@ -19,6 +19,15 @@ Route::get('/', function () {
     return view('home');
 });
 
+
 Route::get('/detail', function () {
     return view('detailbuku');
 });
+
+
+
+
+Route::get('/info', function () {
+    return view('information.information');
+});
+
