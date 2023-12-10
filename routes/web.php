@@ -25,3 +25,6 @@ Route::get('/', function () {
 Route::get('/info', function () {
     return view('information.information');
 });
+Route::get('/categories', function () {
+    return view('categories.categories');
+});
