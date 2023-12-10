@@ -16,6 +16,7 @@
                 <p class="mb-3 text-xl md:w-72 font-medium">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex nihil eveniet delectus totam nulla temporibus sunt, aliquam distinctio nostrum mollitia iste ratione voluptates repellat vel et quibusdam. Magnam, quis accusamus.</p>
             </div>
         </a>
+        
     </div>
     
 

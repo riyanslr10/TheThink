@@ -39,6 +39,31 @@
     </div>
     
 
+            {{-- image 1 --}}
+            <div class="grid grid-cols-1 gap-4 ml-44 mt-15 md:grid-cols-1 lg:grid-cols-2 pt-20">
+                <a href="/detail"
+                    class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+                        src="/img/brave new world.jpg" alt="">
+                    <div class="flex flex-col p-4 leading-normal">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Brave New
+                            World
+                        </h5>
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Aldous Huxley
+                        </h5>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">The novel examines a futuristic
+                            society,
+                            called the World State, that revolves around science and efficiency. In this society,
+                            emotions
+                            and
+                            individuality are conditioned out of children at a young age, and there are no lasting
+                            relationships
+                            because “every one belongs to every one else”</p>
+                        <button type="button"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Download
+                            PDF</button>
+                    </div>
+                </a>
     {{-- image 1 --}}
     <div class="grid grid-cols-1 gap-4 ml-44 mt-15 md:grid-cols-1 lg:grid-cols-2 pt-20">
         <a href="#"

@@ -26,10 +26,6 @@ Route::get('/detail', function () {
     return view('detailbuku');
 });
 
-Route::get('/login', [LoginController::class, 'index']);
-
-
-
 Route::get('/info', function () {
     return view('information.information');
 });

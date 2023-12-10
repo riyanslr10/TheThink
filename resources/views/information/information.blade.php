@@ -3,12 +3,13 @@
 @section('container')
 
 <div class="container">
-    <div class=" flex justify-center py-20 px-20">        
+    <h1 class="flex justify-center text-5xl font-bold mt-4">Fantastic 4</h1>
+    <div class=" flex justify-center py-5 px-20">        
         <a href="#" class="flex flex-col py-10 px-10 items-center bg-blue-200 border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl ">
             <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="/img/Fantastic 4.jpeg" alt="">
            
-                
-        <ol class="border-0 px-4 border-neutral-300 dark:border-neutral-500">
+            
+            <ol class="border-0 px-4 border-neutral-300 dark:border-neutral-500">
             <!--First item-->
             <li>
             <div class="mb-6 ml-4 mt-2">
