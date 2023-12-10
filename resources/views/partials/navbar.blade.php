@@ -1,5 +1,5 @@
-<nav class="bg-blue-200 position-absolute">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+<nav class="bg-blue-200 shadow-lg">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 text-center">
         <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
             <span class="self-center text-2xl font-semibold whitespace-nowrap text-blue-900">TheThink</span>
@@ -40,7 +40,7 @@
             </button>
             <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse pl-5">
                 <a href="/login"
-                    class="px-4 py-2 text-sm font-medium text-center text-blue-200 bg-blue-900 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Sign
+                    class="px-12 py-2 text-sm font-medium text-center text-blue-200 bg-blue-900 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Sign
                     up / Sign in</a>
             </div>
         </div>
@@ -58,19 +58,19 @@
                     placeholder="Search...">
             </div>
             <ul
-                class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-sm md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+                class="flex flex-col p-4 md:p-0 mt-4  font-medium border border-gray-100 rounded-sm md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                 <li>
                     <a href="/"
-                        class="block py-2 px-3 text-blue-200 bg-blue-900 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+                        class="block py-2 px-12 text-blue-200 bg-blue-900 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
                         aria-current="page">Home</a>
                 </li>
                 <li>
                     <a href="/categories"
-                        class="block py-2 px-3 text-blue-200 bg-blue-900 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Category</a>
+                        class="block py-2 px-12 text-blue-200 bg-blue-900 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Category</a>
                 </li>
                 <li>
                     <a href="/info"
-                        class="block py-2 px-3 text-blue-200 bg-blue-900 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Information</a>
+                        class="block py-2 px-12 text-blue-200 bg-blue-900 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Information</a>
                 </li>
             </ul>
         </div>
