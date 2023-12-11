@@ -36,3 +36,7 @@ Route::get('/categories', function () {
 Route::get('/register', function () {
     return view('register.index');
 });
+
+Route::get('/login', function () {
+    return view('login.index');
+});
