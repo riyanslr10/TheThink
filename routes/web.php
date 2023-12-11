@@ -21,3 +21,6 @@ Route::get('/home', function () {
     return view('home');
 });
 
+Route::get('/listbook', function () {
+    return view('listbook');
+});
