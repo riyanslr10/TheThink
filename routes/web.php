@@ -40,3 +40,10 @@ Route::get('/register', function () {
 Route::get('/login', function () {
     return view('login.index');
 });
+
+Route::get('/listbook', function () {
+    return view('listbook');
+});
+
+
+
