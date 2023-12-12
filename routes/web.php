@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LoginController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +15,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-Route::get('/home', function () {
-    return view('home');
+
+Route::get('/detail', function () {
+    return view('detailbuku');
+});
+
+Route::get('/info', function () {
+    return view('information.information');
+});
+Route::get('/categories', function () {
+    return view('categories');
+});
+
+Route::get('/register', function () {
+    return view('register.index');
+});
+
+Route::get('/login', function () {
+    return view('login.index');
 });
 
 Route::get('/listbook', function () {
     return view('listbook');
 });
+
+
+
