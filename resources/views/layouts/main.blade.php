@@ -8,6 +8,7 @@
     <title>TheThink</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
     @vite('resources/css/app.css')
+    
   </head>
   <body>
     

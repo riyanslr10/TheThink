@@ -3,8 +3,8 @@
 @section('container')
 
     <div class=" flex min-h-full flex-col justify-center px-6 pt-20 pb-10 lg:px-8">
-        <div class="sm:mx-auto sm:w-full sm:max-w-sm pb-3">
-            <h2 class=" text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">REGISTER
+        <div class="sm:mx-auto sm:w-full sm:max-w-sm py-6">
+            <h2 class=" text-center text-5xl font-bold leading-9 tracking-tight text-stone-600">REGISTER
             </h2>
         </div>
         <div class="bg-orange-200 pl-[220px] mx-96  pt-1 pb-5 rounded-lg shadow-lg">
@@ -49,7 +49,9 @@
 
                 <div>
                     <button type="submit"
-                        class="flex mt-2 justify-center rounded-md bg-orange-300 bg-opacity-80 hover:bg-orange-400 px-3 py-2 text-lg font-semibold leading-6 text-stone-600 shadow-lg  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600">Register</button>
+                        class="flex mt-4 justify-center rounded-md bg-orange-300 bg-opacity-80 hover:bg-orange-400 px-3 py-2 text-lg font-bold leading-6 text-stone-600 shadow-lg  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600
+                        transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+                        REGISTER</button>
                 </div>
             </form>
         </div>

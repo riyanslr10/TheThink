@@ -3,7 +3,7 @@
 @section('container')
 
 <div class="container">
-    <h1 class="flex justify-center text-5xl font-bold pt-16 text-stone-600">Fantastic 4</h1>
+    <h1 class="flex justify-center text-5xl font-bold pt-20 text-stone-600">Fantastic 4</h1>
     <div class=" flex justify-center pt-3 pb-8 px-20">        
         <a href="#" class="flex flex-col py-10 px-10 items-center bg-orange-200 border border-orange-300 rounded-lg shadow md:flex-row ">
             <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg border-8 border-orange-300" src="/img/Fantastic 4.jpeg" alt="">

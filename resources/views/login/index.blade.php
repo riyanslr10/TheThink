@@ -22,9 +22,9 @@
             </div>
         @endif
          --}}
-    <div class="   flex-col justify-center pb-4 pt-28">
-        <div class="sm:mx-auto sm:w-full sm:max-w-sm py-3">
-            <h2 class="mt-1 text-center text-2xl font-bold leading-9 tracking-tight text-stone-600">LOGIN
+    <div class="   flex-col justify-center pb-4 pt-20">
+        <div class="sm:mx-auto sm:w-full sm:max-w-sm py-5">
+            <h2 class="mt-1 text-center text-5xl font-bold leading-9 tracking-tight text-stone-600">LOGIN
             </h2>
         </div>
 
@@ -50,7 +50,9 @@
 
                 <div>
                     <button type="submit"
-                        class="flex mt-2 justify-center rounded-md bg-orange-300 bg-opacity-80 hover:bg-orange-400 px-3 py-1.5 text-lg font-semibold leading-6 text-stone-600 shadow-lg  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400">LOGIN</button>
+                        class="flex mt-4 justify-center rounded-md bg-orange-300 bg-opacity-80 hover:bg-orange-400 px-3 py-1.5 text-lg font-bold leading-6 text-stone-600 shadow-lg  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400
+                        transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+                        LOGIN</button>
                 </div>
             </form>
 
