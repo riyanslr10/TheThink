@@ -2,26 +2,24 @@
 
 @section('container')
     
-{{-- <div class="flex justify-center">
-    <div class="w-64">
-        @if(session()->has('success'))
-            <div class="bg-green-500 text-white p-4 mb-4 rounded">
-                {{ session('success') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        @endif
+{{-- @if(session()->has('success'))
+<div class="bg-green-500 text-white p-4 mb-4 rounded">
+    {{ session('success') }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
 
-        @if(session()->has('LoginError'))
-            <div class="bg-red-500 text-white p-4 mb-4 rounded">
-                {{ session('LoginError') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        @endif
-         --}}
+@if(session()->has('LoginError'))
+<div class="bg-red-500 text-white p-4 mb-4 rounded">
+    {{ session('LoginError') }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif --}}
+
     <div class="   flex-col justify-center pb-4 pt-20">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm py-5">
             <h2 class="mt-1 text-center text-5xl font-bold leading-9 tracking-tight text-stone-600">LOGIN
@@ -32,7 +30,8 @@
             <form class="" action="#" method="POST">
                 <div>
                     <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email
-                        Address</label>
+                        Address
+                    </label>
                     <div class="">
                         <input id="email" name="email" type="email" autocomplete="email" required
                             class="block w-60 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
@@ -41,7 +40,9 @@
 
                 <div>
                     <div>
-                        <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                        <label for="password" class="block text-sm font-medium leading-6 text-gray-900">
+                            Password
+                        </label>
                         <div class="">
                             <input id="password" name="password" type="password" autocomplete="current-password" required
                                 class="block w-60 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
