@@ -24,3 +24,7 @@ Route::get('/home', function () {
 Route::get('/listbook', function () {
     return view('listbook');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
