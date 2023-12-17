@@ -13,7 +13,7 @@
         <h1 class="  pl-32 text-4xl font-bold tracking-tight text-stone-600 dark:text-white">
             Explore Our Latest Collections
         </h1>
-        <a href="/listbook">
+        <a href="/posts">
             <button type="button"
                 class="ml-32 mt-5 text-stone-600 bg-orange-200 hover:bg-orange-300 focus:ring-4 focus:ring-orange-300 font-bold rounded-lg text-lg px-3 py-2.5 me-2 mb-2  focus:outline-none
                 animate-bounce">
@@ -143,7 +143,7 @@
         </a>
     </div>
     <div class="flex justify-center pt-7 pb-7 pl-24">
-        <a href="/listbook">
+        <a href="/posts">
         <button type="button"
             class="text-stone-600 bg-orange-200 hover:bg-orange-300 focus:ring-4 focus:ring-orange-300 font-bold rounded-lg text-lg px-3 py-2.5 me-2 mb-2  focus:outline-none
             transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 ">

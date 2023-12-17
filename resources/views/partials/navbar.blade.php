@@ -1,13 +1,12 @@
 <nav class="bg-amber-400 shadow-lg fixed z-40 pt-3">
     <div class=" flex flex-wrap items-center justify-between px-[92px] py-3 text-center ">
-        <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse px-3">
-            <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse px-3">
+            <img src="/" class="h-8" alt="Flowbite Logo" />
             <span class="self-center text-2xl font-bold whitespace-nowrap text-amber-700">TheThink</span>
         </a>
         <div class="flex md:order-2 pl-24">
-            <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
-                aria-expanded="false"
-                class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
+            <button type="submit" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
+                aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
                 <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                     viewBox="0 0 20 20">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
