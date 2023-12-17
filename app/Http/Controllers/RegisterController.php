@@ -12,7 +12,6 @@ class RegisterController extends Controller
     {
         return view("register.index", [
             "title"=> "register",
-            "active"=> "register",
         ]);
     }
     public function store(request $request)

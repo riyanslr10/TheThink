@@ -1,10 +1,12 @@
 @extends('layouts.main')
 
 @section('container')
+<div class="flex-col justify-center pb-4 pt-20">
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm py-5">
 
-    @if(session()->has('success'))
-        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
-            <span class="block sm:inline">{{ session('success') }}</span>
+@if(session()->has('success'))
+<div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+    <span class="block sm:inline">{{ session('success') }}</span>
             <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
                 <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                     <title>Close</title>
@@ -15,8 +17,8 @@
     @endif
 
     @if(session()->has('LoginError'))
-        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-            <span class="block sm:inline">{{ session('LoginError') }}</span>
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+        <span class="block sm:inline">{{ session('LoginError') }}</span>
             <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
                 <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                     <title>Close</title>
@@ -25,12 +27,10 @@
             </span>
         </div>
     @endif
-
-    {{-- title login --}}
+    
     <main class="form-signin">
-        <div class="flex-col justify-center pb-4 pt-20">
-            <div class="sm:mx-auto sm:w-full sm:max-w-sm py-5">
-                <h2 class="mt-1 text-center text-5xl font-bold leading-9 tracking-tight text-stone-600">
+    {{-- title login --}}
+            <h2 class="mt-1 text-center text-5xl font-bold leading-9 tracking-tight text-stone-600">
                     LOGIN
                 </h2>
             </div>

@@ -38,10 +38,63 @@
                 </svg>
             </button>
             <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse px-5 ">
-                <a href="/login"
-                    class="px-12 py-2 text-lg font-bold text-center text-stone-600 bg-amber-500 rounded-lg hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-600
-                    transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
-                    Sign up / Sign in</a>
+                <ul class="flex items-center space-x-4">
+                    @auth
+                        <li class="relative group">
+                            <button
+                                class="flex items-center space-x-1 text-white focus:outline-none focus:ring focus:border-blue-300"
+                                id="userMenu"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                            >
+                                <span>Welcome, {{ auth()->user()->name }}</span>
+                                <svg
+                                    class="w-4 h-4 text-white group-hover:text-gray-300 transition duration-150 ease-in-out"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M10 3a1 1 0 0 1 1 1v4a1 1 0 0 1-2 0V4a1 1 0 0 1 1-1zm0 8a1 1 0 0 1 1 1v4a1 1 0 0 1-2 0v-4a1 1 0 0 1 1-1zm0-8a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0V4a1 1 0 0 1 1-1z"
+                                        clip-rule="evenodd"
+                                    ></path>
+                                </svg>
+                            </button>
+                            <div
+                                class="hidden absolute right-0 mt-2 space-y-2 bg-white border border-gray-200 rounded-md shadow-md"
+                                aria-labelledby="userMenu"
+                            >
+                                <a
+                                    href="/dashboard"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                >
+                                    <i class="bi bi-layout-text-sidebar-reverse"></i> Dashboard
+                                </a>
+                                <hr class="border-t border-gray-200">
+                                <form action="/logout" method="post">
+                                    @csrf
+                                    <button
+                                        type="submit"
+                                        class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
+                                    >
+                                        <i class="bi bi-box-arrow-right"></i> Sign Out
+                                    </button>
+                                </form>
+                            </div>
+                        </li>
+                    @else
+                        <li>
+                            <a
+                                href="/login"
+                                class="text-white hover:text-gray-300 focus:outline-none focus:ring focus:border-blue-300"
+                            >
+                                <i class="bi bi-box-arrow-in-right"></i> Sign In
+                            </a>
+                        </li>
+                    @endauth
+                </ul>
+                
             </div>
         </div>
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
