@@ -37,6 +37,7 @@
                         d="M1 1h15M1 7h15M1 13h15" />
                 </svg>
             </button>
+            
             <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse px-5 ">
                 <ul class="flex items-center space-x-4">
                     @auth
@@ -97,6 +98,7 @@
                 </ul>
                 
             </div>
+
         </div>
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
             <div class="relative mt-3 md:hidden">
