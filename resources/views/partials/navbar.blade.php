@@ -1,7 +1,7 @@
-<nav class="bg-amber-400 shadow-lg fixed z-40 pt-3">
-    <div class=" flex flex-wrap items-center justify-between px-[92px] py-3 text-center ">
+<nav class=" shadow-lg relative z-40 ">
+    <div class="bg-white bg-opacity-80 fixed w-full flex flex-wrap items-center justify-between  py-1 text-center shadow-xl">
         <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse px-3">
-            <img src="/" class="h-8" alt="Flowbite Logo" />
+            <img src="/img/logo baru.png" class="h-20"  />
             <span class="self-center text-2xl font-bold whitespace-nowrap text-amber-700">TheThink</span>
         </a>
         <div class="flex md:order-2 pl-24">
@@ -24,7 +24,7 @@
                     <span class="sr-only">Search icon</span>
                 </div>
                 <input type="text" id="search-navbar"
-                    class="block w-full mt-1 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="block w-full mt-1 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-orange-400 focus:border-orange-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-400 dark:focus:border-orange-400"
                     placeholder="Search...">
             </div>
             <button data-collapse-toggle="navbar-search" type="button"
@@ -42,14 +42,14 @@
                     @auth
                         <li class="relative group">
                             <button
-                                class="flex items-center space-x-1 text-white focus:outline-none focus:ring focus:border-blue-300"
+                                class="flex items-center space-x-1 text-stone-600 text-lg font-bold focus:outline-none focus:ring focus:border-blue-300"
                                 id="userMenu"
                                 aria-haspopup="true"
                                 aria-expanded="false"
                             >
                                 <span>Welcome, {{ auth()->user()->name }}</span>
                                 <svg
-                                    class="w-4 h-4 text-white group-hover:text-gray-300 transition duration-150 ease-in-out"
+                                    class="w-4 h-4 text-stone-600 text-lg font-bold group-hover:text-gray-300 transition duration-150 ease-in-out"
                                     fill="currentColor"
                                     viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@
                                 </svg>
                             </button>
                             <div
-                                class="hidden absolute right-0 mt-2 space-y-2 bg-white border border-gray-200 rounded-md shadow-md"
+                                class="hidden absolute right-0 mt-2 space-y-2 bg-sttext-stone-600 text-lg font-bold border border-gray-200 rounded-md shadow-md"
                                 aria-labelledby="userMenu"
                             >
                                 <a
@@ -87,7 +87,8 @@
                         <li>
                             <a
                                 href="/login"
-                                class="text-white hover:text-gray-300 focus:outline-none focus:ring focus:border-blue-300"
+                                class="block py-2 px-12 text-lg font-bold text-stone-600 rounded-lg bg-orange-200 focus:ring-4 focus:outline-none focus:ring-orange-300
+                                transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 "
                             >
                                 <i class="bi bi-box-arrow-in-right"></i> Sign In
                             </a>
@@ -114,18 +115,18 @@
                 class="flex flex-col p-4 md:p-0 mt-4  font-bold border border-gray-100 rounded-sm md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                 <li>
                     <a href="/"
-                        class="block py-2 px-12 text-lg font-bold text-stone-600  rounded-lg hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-600
+                        class="block py-2 px-3 text-lg font-bold text-stone-600  rounded-lg  
                         transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300"
                         aria-current="page">Home</a>
                 </li>
                 <li>
                     <a href="/categories"
-                        class="block py-2 px-12 text-lg font-bold text-stone-600 rounded-lg hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-600
+                        class="block py-2 px-3 text-lg font-bold text-stone-600 rounded-lg 
                         transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">Category</a>
                 </li>
                 <li>
                     <a href="/info"
-                        class="block py-2 px-12 text-lg font-bold text-stone-600  rounded-lg hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-600
+                        class="block py-2 px-3 text-lg font-bold text-stone-600  rounded-lg 
                         transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">Information</a>
                 </li>
             </ul>

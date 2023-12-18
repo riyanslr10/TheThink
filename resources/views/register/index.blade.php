@@ -15,7 +15,7 @@
                     {{-- name --}}
                     <div class="form-floating">
                         <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
-                        <input id="name" name="name" type="text" autocomplete="name" required class="block w-60 h-10 rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 @error('name') is-invalid @enderror" placeholder="name" value="{{ old('name') }}">
+                        <input id="name" name="name" type="text" autocomplete="name" required class="block w-60 h-10 rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-300 sm:text-sm sm:leading-6 @error('name') is-invalid @enderror" placeholder="name" value="{{ old('name') }}">
                         @error('name')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -28,7 +28,7 @@
                         <div class="flex items-center justify-between">
                             <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Username</label>
                         </div>
-                        <input id="username" name="username" type="text" required class="form-control block w-60 h-10 rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 @error('username') is-invalid @enderror" placeholder="username" value="{{ old('username') }}">
+                        <input id="username" name="username" type="text" required class="form-control block w-60 h-10 rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-300 sm:text-sm sm:leading-6 @error('username') is-invalid @enderror" placeholder="username" value="{{ old('username') }}">
                         @error('username')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -39,7 +39,7 @@
                     {{-- Email --}}
                     <div class="form-floating">
                         <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email Address</label>
-                        <input id="email" name="email" type="email" class="form-control block w-60 h-10 rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 @error('email') is-invalid @enderror" placeholder="name@example.com" required value="{{ old('email') }}">
+                        <input id="email" name="email" type="email" class="form-control block w-60 h-10 rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-300 sm:text-sm sm:leading-6 @error('email') is-invalid @enderror" placeholder="name@example.com" required value="{{ old('email') }}">
                         @error('email')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -50,7 +50,7 @@
                     {{-- password --}}
                     <div class="form-floating">
                         <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
-                        <input id="password" name="password" type="password"  required class="block w-60 h-10 rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 @error('password') is-invalid @enderror" placeholder="Password">
+                        <input id="password" name="password" type="password"  required class="block w-60 h-10 rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-300 sm:text-sm sm:leading-6 @error('password') is-invalid @enderror" placeholder="Password">
                         @error ('password')
                         <div class="invalid-feedback">
                           {{ $message }}

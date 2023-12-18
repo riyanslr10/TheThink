@@ -49,7 +49,7 @@
                         </div>
                         @enderror
                         <input id="email" name="email" type="email" autocomplete="email" required
-                               class="block w-60 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 form-control @error('email') is-invalid @enderror"
+                               class="block w-60 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-300 sm:text-sm sm:leading-6 form-control @error('email') is-invalid @enderror"
                                id="email" placeholder="name@example.com" autofocus required value="{{ old('email') }}">
 
                     </div>
@@ -61,7 +61,7 @@
                                 Password
                             </label>
                             <input id="password" name="password" type="password" autocomplete="current-password" required
-                                   class="block w-60 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                   class="block w-60 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-300 sm:text-sm sm:leading-6">
 
                         </div>
 
@@ -78,10 +78,10 @@
 
                 <hr class="my-2 border-amber-400 sm:mx-auto dark:border-gray-700 lg:my-5 "/>
 
-                <a href="{{route('google.login')}}"
+                {{-- <a href="{{route('google.login')}}"
                    class="mb-3 flex w-full items-center justify-center rounded bg-primary">
                     Login With Google
-                </a>
+                </a> --}}
 
             </div>
         </div>

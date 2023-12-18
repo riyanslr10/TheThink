@@ -2,18 +2,18 @@
 @section('container')
     {{-- Detail buku --}}
 
-    <div class="  justify-center  mt-15  pb-14 pt-24">
-        <h1 class="flex justify-center text-5xl font-bold  text-stone-600">Detail Book</h1>
-        <h1 class="">{{ $post->title }}</h1>
+    <h1 class=" text-center text-5xl font-bold  text-stone-600 pt-28">Detail Book</h1>
+    <h1 class="text-center text-3x1 font-bold  text-stone-600">{{ $post->title }}</h1>
+    <div class=" grid grid-rows-1 justify-center  "> 
         <a href="#"
-            class="flex flex-col items-center  rounded-lg shadow md:flex-row mt-4  h-[27rem] bg-orange-200 border border-orange-300 mx-[400px] overflow-hidden">
+            class="   rounded-lg shadow     bg-orange-200  overflow-hidden mx-80">
             @if ($post->image)
-            <img class="object-cover w-full rounded-t-lg h-96 md:h-96 md:w-72 md:rounded-none md:rounded-s-lg  border-8 border-orange-300 ml-7 hover:scale-125"
+            <img class=" rounded-t-lg h-full md:h-64 lg:h-80 xl:h-96 "
                 src="{{ asset('storage/'. $post->image) }}" alt="{{ $post->category->name }}">
                 @else
-                <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" alt="{{ $post->category->name }}" class="img-fluid">
+                <img src="https://source.unsplash.com/400x600?{{ $post->category->name }}" alt="{{ $post->category->name }}" class="">
                 @endif
-            <div class="flex flex-col  leading-normal justify-center pl-12 pr-10 dark:text-stone-600 ">
+            <div class="  leading-normal justify-center  dark:text-stone-600 ">
                 <h5 class=" text-2xl font-bold tracking-tight "><a href="/posts?category={{ $post->category->slug }}" class="text-decoration-none"> {{ $post->category->name  }}</a></h5>
                 <p class="mb-3 text-xl font-semibold">By.<a href="/posts?author={{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a></p>
                 <button type="button"

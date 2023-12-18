@@ -2,8 +2,8 @@
 
 @section('container')
 
-<div class="container ">
-    <h1 class="flex justify-center  text-3xl font-bold pt-24 pb-7 bg-orange-300 text-stone-600 mx-60 rounded-lg shadow-lg">Select the category you are interested in</h1>
+<div class="container pt-20 ">
+    <h1 class="flex justify-center text-3xl font-bold pt-6 pb-7  text-stone-600 mx-60 rounded-lg shadow-lg">Select the category you are interested in</h1>
     <div class="grid grid-cols-1  md:grid-cols-1 lg:grid-cols-2 pt-8 pb-[50px]">
             
         <div class="flex pl-24">
