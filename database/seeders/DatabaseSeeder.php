@@ -23,12 +23,12 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         User::create([
-            'name'=> 'admin',
-            'username'=> 'admin',
-            'email'=> 'admin@gmail.com',
-            'password'=> bcrypt('12345'),
+            'name' => 'admin',
+            'username' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('12345'),
         ]);
-        
+
         User::factory(3)->create();
 
         Category::create([
@@ -52,6 +52,5 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Post::factory(20)->create();
-
     }
 }

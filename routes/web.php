@@ -37,9 +37,9 @@ Route::get('/info', function () {
 // Halaman Categories
 Route::get('/categories', function () {
     return view('categories', [
-            'title' => 'Post Categories',
-            'active' => 'categories',
-            'categories' => Category::all()  
+        'title' => 'Post Categories',
+        'active' => 'categories',
+        'categories' => Category::all()
     ]);
 });
 
