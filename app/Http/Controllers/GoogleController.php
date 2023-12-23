@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
-use Auth;
+use Illuminate\Support\Facades\Auth; // Import Auth class
 class GoogleController extends Controller
 {
     public function redirectToGoogle ()
