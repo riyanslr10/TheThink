@@ -57,7 +57,6 @@ Route::get('/dashboard', function () {
 
 Auth::routes();
 
-Route::get('/register', [App\Http\Controllers\RegisterController::class, 'index'])->name('register');
 Route::get('auth/google', [App\Http\Controllers\GoogleController::class, 'redirectToGoogle'])->name('google.login');
 Route::get('auth/google/callback', [App\Http\Controllers\GoogleController::class, 'handleGoogleCallback'])->name('google.callback');
 
