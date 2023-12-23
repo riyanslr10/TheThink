@@ -1,5 +1,5 @@
 <nav class=" shadow-lg relative z-40 ">
-    <div class="bg-white bg-opacity-80 fixed w-full flex flex-wrap items-center justify-between  py-1 text-center shadow-xl">
+    <div class="bg-white  fixed w-full flex flex-wrap items-center justify-between  py-1 text-center shadow-xl">
         <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse px-3">
             <img src="/img/logo baru.png" class="h-20"  />
             <span class="self-center text-2xl font-bold whitespace-nowrap text-amber-700">TheThink</span>
@@ -62,8 +62,8 @@
                         </ul>
                     </li>
                     @else
-                    <li class="nav-item">
-                        <a href="/login" class="nav-link"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                    <li class="nav-item text-white bg-stone-600 rounded-lg px-5 py-2  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300" >
+                        <a href="/login" class="nav-link"><i class="bi bi-box-arrow-in-right "></i> Login</a>
                     </li>
                     @endauth
                 </ul>

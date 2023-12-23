@@ -42,7 +42,7 @@
                                 <img class="object-cover w-full rounded-t-lg h-48 md:h-64 lg:h-80 xl:h-96 "
                                      src="{{ asset('storage/'. $post->image) }}" alt="{{ $post->category->name }}">
                             @else
-                                <img src="https://source.unsplash.com/500x400?{{ $post->category->name }}" class="card-img-top hover:scale-125"
+                                <img src="https://source.unsplash.com/500x400?{{ $post->category->name }}" class="card-img-top "
                                      alt="{{ $post->category->name }}">
                             @endif
                             <div class=" justify-between p-4 pt-12 leading-normal">
