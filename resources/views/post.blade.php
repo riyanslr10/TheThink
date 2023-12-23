@@ -13,7 +13,7 @@
                 <img class="  rounded-t-lg h-full md:h-full  "
                     src="{{ asset('storage/'. $post->image) }}" alt="{{ $post->category->name }}">
                     @else
-                    <img src="https://source.unsplash.com/400x500?{{ $post->category->name }}" alt="{{ $post->category->name }}" class="ml-7 mt-3 hover:scale-125">
+                    <img src="https://source.unsplash.com/400x500?{{ $post->category->name }}" alt="{{ $post->category->name }}" class="ml-7 mt-3 ">
                     @endif
                 <div class="  leading-normal justify-center  dark:text-stone-600 ">
                     <h1 class=" text-2xl  font-extrabold tracking-tight text-stone-600">{{ $post->title }}</h1>

@@ -31,16 +31,16 @@
           <td class="border px-2 py-2">{{ $post->category->name }}</td>
           <td class="border px-2 py-2">
             <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-info px-2 py-2">
-              <span data-feather="eye"></span>
+ 
             </a>
             <a href="/dashboard/posts/{{ $post->slug }}/edit" class="badge bg-warning px-2 py-2">
-              <span data-feather="edit"></span>
+
             </a>
             <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="inline">
               @csrf
               @method('delete')
               <button class="badge bg-danger border-0 px-2 py-2" onclick="return confirm('Are You Sure?')">
-                <span data-feather="x-circle"></span>
+
               </button>
             </form>
           </td>
