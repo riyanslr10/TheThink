@@ -28,9 +28,7 @@ class LoginController extends Controller
             $findUser->username = $user->name;
             $findUser->email = $user->email;
             $findUser->password = bcrypt('password');
-            $findUser->type = 'customer';
-            $findUser->status = 'Active';
-            $findUser->remember_token = Str::random(10); // Tambahkan remember_token
+            $findUser->remember_token(); //
             $findUser->save();
         }
 

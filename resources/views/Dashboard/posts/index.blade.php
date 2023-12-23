@@ -1,52 +1,62 @@
 @extends('dashboard.layouts.main')
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
 @section('container')
-<div class="flex justify-between flex-wrap items-center pt-3 pb-2 mb-2 border-b">
-  <h1 class="text-2xl">My Post</h1>
-</div>
+<div class="p-4 sm:ml-64">
+  
+  
+  <div class="mt-10 py-10">
+    <h1 class="text-4xl">My Post</h1>
 
-@if (session()->has('success'))
-<div class="bg-green-500 text-white p-4 mb-4">
-  {{ session('success') }}
-</div>
-@endif
+    @if (session()->has('success'))
+    <div class="bg-green-500 text-white p-4 mt-4 mb-4">
+      {{ session('success') }}
+    </div>
+    @endif
 
-<div class="col-lg-8">
-  <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Create New Post</a>
-  <div class="overflow-x-auto">
-    <table class="table-auto w-full">
-      <thead>
-        <tr>
-          <th class="px-4 py-2">No</th>
-          <th class="px-4 py-2">Title</th>
-          <th class="px-4 py-2">Category</th>
-          <th class="px-4 py-2">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach ($posts as $post)
-        <tr>
-          <td class="border px-2 py-2">{{ $loop->iteration }}</td>
-          <td class="border px-2 py-2">{{ $post->title }}</td>
-          <td class="border px-2 py-2">{{ $post->category->name }}</td>
-          <td class="border px-2 py-2">
-            <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-info px-2 py-2">
- 
-            </a>
-            <a href="/dashboard/posts/{{ $post->slug }}/edit" class="badge bg-warning px-2 py-2">
+  </div>
+  <div class="mt-5 mb-5">
 
-            </a>
-            <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="inline">
-              @csrf
-              @method('delete')
-              <button class="badge bg-danger border-0 px-2 py-2" onclick="return confirm('Are You Sure?')">
-
-              </button>
-            </form>
-          </td>
-        </tr>
-        @endforeach
-      </tbody>
+    <a href="/dashboard/posts/create" class="bg-green-400 border-8 border-green-400 hover:bg-green-600 hover:border-green-600 text-lg rounded-md divide-y-4 bg ">Create New Post</a>
+  </div>
+  
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-700 dark:bg-gray-700 dark:text-gray-400">
+            <tr class="bg-gray-400 border-b dark:bg-gray-800 dark:border-gray-700">
+              <th scope="row" class="py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">No</th>
+              <th scope="row" class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Title</th>
+              <th scope="row" class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Category</th>
+              <th scope="row" class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+          @foreach ($posts as $post)
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <td class="px-6 py-4">{{ $loop->iteration }}</td>
+            <td class="px-6 py-4">{{ $post->title }}</td>
+            <td class="px-6 py-4">{{ $post->category->name }}</td>
+            <td class="px-6 py-4">
+  
+              <a href="/dashboard/posts/{{ $post->slug }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                Show
+              </a>
+  
+              <a href="/dashboard/posts/{{ $post->slug }}/edit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                Edit
+              </a>
+  
+              <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="inline">
+                @csrf
+                @method('delete')
+                <button class="font-medium text-blue-600 dark:text-blue-500 hover:underline" onclick="return confirm('Are You Sure?')">
+                  Delete
+                </button>
+              </form>
+            </td>
+          </tr>
+          @endforeach
+        </tbody>
     </table>
   </div>
 </div>
