@@ -22,7 +22,7 @@
                 <h2 class="text-center text-5xl font-bold leading-9 tracking-tight text-white">REGISTER</h2>
             </div>
 
-            <div class="bg-orange-200 bg-opacity-60 pl-[220px] mx-96 pt-1 pb-5 rounded-lg shadow-lg">
+            <div class="bg-orange-200 bg-opacity-60 pl-[220px] mx-96 py-5 rounded-lg shadow-lg">
                 <form action="/register" method="post">
                     @csrf
     
@@ -73,7 +73,7 @@
                     </div>
     
                     
-                        <button type="submit" class="flex mt-4 justify-center rounded-md bg-orange-300 bg-opacity-80 hover:bg-orange-400 px-3 py-2 text-lg font-bold leading-6 text-white shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                        <button type="submit" class="block mt-4 justify-center rounded-md bg-orange-300 bg-opacity-80 hover:bg-orange-400  w-60 h-10 text-center text-lg font-bold leading-6 text-white shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                             Register
                         </button>
                     
