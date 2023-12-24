@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
  */
@@ -17,15 +18,20 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(mt_rand(2,8)),
+            'title' => $this->faker->sentence(mt_rand(2, 8)),
             'slug' => $this->faker->slug(),
             'excerpt' => $this->faker->paragraph(),
-            // 'body' => '<p>' . implode('</p><p>',$this->faker->paragraphs(mt_rand(5,10))) . '</p>',
-            'body' => collect($this->faker->paragraphs(mt_rand(5,10)))
-                    ->map(fn($p) => "<p>$p</p>")
-                    ->implode(''),
-            'user_id' => mt_rand(1,3),
-            'category_id' => mt_rand(1,2)
+            'body' => collect($this->faker->paragraphs(mt_rand(50, 100)))
+                        ->map(fn ($p) => "<p>$p</p>")
+                        ->implode(''),
+            'user_id' => mt_rand(1, 3),
+            'category_id' => mt_rand(1, 2),
+            'author' => $this->faker->name(),           // Penulis
+            'publisher' => $this->faker->company(),     // Penerbit
+            'publication_year' => $this->faker->year(), // Tahun Terbit
+            'page_count' => mt_rand(50, 500),            // Jumlah Halaman
+            'sinopsis' => $this->faker->paragraph()      // Sinopsis
         ];
     }
+    
 }

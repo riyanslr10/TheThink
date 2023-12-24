@@ -23,6 +23,14 @@ class User extends Authenticatable
     //     'password',
     // ];
 
+    // app/Models/User.php
+
+public function posts()
+{
+    return $this->hasMany(Post::class);
+}
+
+
     protected $guarded = ['id'];
 
 

@@ -37,6 +37,7 @@
                         d="M1 1h15M1 7h15M1 13h15" />
                 </svg>
             </button>
+            
             <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse px-3 mx-3 rounded-lg " :class="{ 'block': isOpen, 'hidden': !isOpen }">
                 <ul class="flex items-center space-x-4 font-bold ">
                     @auth
