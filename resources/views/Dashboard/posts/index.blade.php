@@ -27,6 +27,11 @@
               <th scope="row" class="py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">No</th>
               <th scope="row" class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Title</th>
               <th scope="row" class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Category</th>
+              <th scope="row" class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Author</th>
+              <th scope="row" class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Publisher</th>
+              <th scope="row" class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Sinopsis</th>
+              <th scope="row" class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Publication Year</th>
+              <th scope="row" class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Page Count</th>
               <th scope="row" class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Action</th>
             </tr>
         </thead>
@@ -36,20 +41,25 @@
             <td class="px-6 py-4">{{ $loop->iteration }}</td>
             <td class="px-6 py-4">{{ $post->title }}</td>
             <td class="px-6 py-4">{{ $post->category->name }}</td>
+            <td class="px-6 py-4">{{ $post->author }}</td>
+            <td class="px-6 py-4">{{ $post->publisher }}</td>
+            <td class="px-6 py-4">{{ $post->sinopsis }}</td>
+            <td class="px-6 py-4">{{ $post->publication_year }}</td>
+            <td class="px-6 py-4">{{ $post->page_count }}</td>
             <td class="px-6 py-4">
   
-              <a href="/dashboard/posts/{{ $post->slug }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+              <a href="/dashboard/posts/{{ $post->slug }}" class="font-medium text-green-600 dark:text-blue-500 hover:underline">
                 Show
               </a>
   
-              <a href="/dashboard/posts/{{ $post->slug }}/edit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+              <a href="/dashboard/posts/{{ $post->slug }}/edit" class="font-medium text-yellow-500 dark:text-blue-500 hover:underline">
                 Edit
               </a>
   
               <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="inline">
                 @csrf
                 @method('delete')
-                <button class="font-medium text-blue-600 dark:text-blue-500 hover:underline" onclick="return confirm('Are You Sure?')">
+                <button class="font-medium text-blue-600 dark:text-red-500 hover:underline" onclick="return confirm('Are You Sure?')">
                   Delete
                 </button>
               </form>

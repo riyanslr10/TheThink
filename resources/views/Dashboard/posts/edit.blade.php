@@ -43,6 +43,56 @@
         </div>
 
         <div class="mb-4">
+          <label for="author" class="block text-lg font-medium text-gray-700">Author</label>
+          <input type="text" class="mt-1 p-2 w-full border rounded-md @error ('author') border-red-500 @enderror" id="author" name="author" required value="{{ old('author', $post->author) }}">
+          @error ('author') 
+          <div class="text-red-500 mt-2">
+              {{ $message }}
+          </div>
+          @enderror
+      </div>
+
+      <div class="mb-4">
+          <label for="publisher" class="block text-lg font-medium text-gray-700">Publisher</label>
+          <input type="text" class="mt-1 p-2 w-full border rounded-md @error ('publisher') border-red-500 @enderror" id="publisher" name="publisher" required value="{{ old('publisher', $post->publisher) }}">
+          @error ('publisher') 
+          <div class="text-red-500 mt-2">
+              {{ $message }}
+          </div>
+          @enderror
+      </div>
+
+      <div class="mb-4">
+          <label for="publication_year" class="block text-lg font-medium text-gray-700">Publication Year</label>
+          <input type="text" class="mt-1 p-2 w-full border rounded-md @error ('publication_year') border-red-500 @enderror" id="publication_year" name="publication_year" required value="{{ old('publication_year', $post->publication_year) }}">
+          @error ('publication_year') 
+          <div class="text-red-500 mt-2">
+              {{ $message }}
+          </div>
+          @enderror
+      </div>
+
+      <div class="mb-4">
+          <label for="page_count" class="block text-lg font-medium text-gray-700">Page Count</label>
+          <input type="number" class="mt-1 p-2 w-full border rounded-md @error ('page_count') border-red-500 @enderror" id="page_count" name="page_count" required value="{{ old('page_count', $post->page_count) }}">
+          @error ('page_count') 
+          <div class="text-red-500 mt-2">
+              {{ $message }}
+          </div>
+          @enderror
+      </div>
+
+      <div class="mb-4">
+          <label for="sinopsis" class="block text-lg font-medium text-gray-700">Sinopsis</label>
+          <textarea class="mt-1 p-2 w-full border rounded-md @error ('sinopsis') border-red-500 @enderror" id="sinopsis" name="sinopsis" required>{{ old('sinopsis', $post->sinopsis) }}</textarea>
+          @error ('sinopsis') 
+          <div class="text-red-500 mt-2">
+              {{ $message }}
+          </div>
+          @enderror
+      </div>
+
+        <div class="mb-4">
           <label for="image" class="block text-lg font-medium text-gray-700">Post Image</label>
           <input type="hidden" name="oldImage" value="{{ $post->image }}">
           @if ($post->image)

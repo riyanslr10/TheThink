@@ -22,8 +22,16 @@
         </div>
     </div>
 
+    <div class="my-3 text-lg">
+        <p><strong>Author:</strong> {{ $post->author }}</p>
+        <p><strong>Publisher:</strong> {{ $post->publisher }}</p>
+        <p><strong>Publication Year:</strong> {{ $post->publication_year }}</p>
+        <p><strong>Page Count:</strong> {{ $post->page_count }}</p>
+        <p><strong>Sinopsis:</strong> {{ $post->sinopsis }}</p>
+    </div>
+
     @if ($post->image)
-        <div style="max-height: 400px; overflow:hidden;">
+        <div style="max-height: 1020px; overflow:hidden;">
             <img src="{{ asset('storage/'. $post->image) }}" alt="{{ $post->category->name }}" class="mt-6 mb-6">
         </div>
     @else

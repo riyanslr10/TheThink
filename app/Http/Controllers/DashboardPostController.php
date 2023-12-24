@@ -38,25 +38,29 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
+    $validateData = $request->validate([
+        'title' => 'required|max:255',
+        'slug' => 'required|unique:posts',
+        'category_id' => 'required',
+        'author' => 'required|max:255',
+        'publisher' => 'required|max:255',
+        'sinopsis' => 'required',
+        'publication_year' => 'required|integer|min:1900',
+        'page_count' => 'required|integer|min:1',
+        'image' => 'image|file|max:1024',
+        'body' => 'required'
+    ]);
 
-        $validateData = $request->validate([
-            'title' => 'required|max:255',
-            'slug' => 'required|unique:posts',
-            'category_id' => 'required',
-            'image'=> 'image|file|max:1024',
-            'body' => 'required'
-        ]);
+    if($request->file('image')) {
+        $validateData['image'] = $request->file('image')->store('post-images');
+    }
 
-        if($request->file('image')) {
-            $validateData['image'] = $request->file('image')->store('post-images');
-        }
+    $validateData['user_id'] = auth()->user()->id;
+    $validateData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
-        $validateData['user_id'] = auth()->user()->id;
-        $validateData['excerpt'] = Str::limit(strip_tags($request->body), 200);
+    Post::create($validateData);
 
-        Post::create($validateData);
-
-        return redirect('/dashboard/posts')->with('success', 'New post has been added!');
+    return redirect('/dashboard/posts')->with('success', 'New post has been added!');
     }
 
     /**
@@ -88,33 +92,36 @@ class DashboardPostController extends Controller
         $rules = [
             'title' => 'required|max:255',
             'category_id' => 'required',
-            'image'=> 'image|file|max:1024',
+            'author' => 'required|max:255',
+            'publisher' => 'required|max:255',
+            'sinopsis' => 'required',
+            'publication_year' => 'required|integer|min:1900',
+            'page_count' => 'required|integer|min:1',
+            'image' => 'image|file|max:1024',
             'body' => 'required'
         ];
-
-        
-        if($request->slug != $post->slug)
-        {
+    
+        if($request->slug != $post->slug) {
             $rules['slug'] = 'required|unique:posts';
         }
         
         $validateData = $request->validate($rules);
-
+    
         if($request->file('image')) {
-            if($request->oldImage){
+            if($request->oldImage) {
                 Storage::delete($request->oldImage);
             }
             $validateData['image'] = $request->file('image')->store('post-images');
         }
-
+    
         $validateData['user_id'] = auth()->user()->id;
         $validateData['excerpt'] = Str::limit(strip_tags($request->body), 200);
-
-        Post::where('id', $post->id)
-                ->update($validateData);
-
+    
+        Post::where('id', $post->id)->update($validateData);
+    
         return redirect('/dashboard/posts')->with('success', 'Post has been Updated!');
     }
+    
 
     /**
      * Remove the specified resource from storage.
