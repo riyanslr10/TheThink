@@ -4,7 +4,7 @@
             <img src="/img/logo baru.png" class="h-20"  />
             <span class="self-center text-2xl font-bold whitespace-nowrap text-amber-700">TheThink</span>
         </a>
-        <div class="flex md:order-2 pl-24">
+        {{-- <div class="flex md:order-2 pl-24">
             <button type="submit" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
                 aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
                 <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -38,41 +38,9 @@
                 </svg>
             </button>
             
-            <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse px-3 mx-3 rounded-lg " :class="{ 'block': isOpen, 'hidden': !isOpen }">
-                <ul class="flex items-center space-x-4 font-bold ">
-                    @auth
-                    <li x-data="{ isOpen: false }" @click.away="isOpen = false" class="relative nav-item dropdown px-5">
-                        
-                        <a @click="isOpen = !isOpen" class="nav-link dropdown-toggle cursor-pointer" role="button" aria-haspopup="true" :aria-expanded="isOpen ? 'true' : 'false'">
-                            Welcome, {{ auth()->user()->name }} <svg class="ml-10 w-6 h-6  text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 8">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"/>
-                              </svg>
-                        </a>
-                        
-                        <ul x-show="isOpen" @click.away="isOpen = false" class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
-                            <li><a class="block px-4 py-2 text-sm text-gray-700" href="/dashboard"> Dashboard</a></li>
-                            <li class="border-t border-gray-200"></li>
-                            <li>
-                                <form action="/logout" method="post" class="block px-4  text-sm text-gray-700">
-                                    @csrf
-                                    <button type="submit" class="block px-14 py-2 text-sm text-gray-700 ">
-                                        <span data-feather="log-out"></span> Logout
-                                    </button>
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                    @else
-                    <li class="nav-item text-white bg-stone-600 rounded-lg px-5 py-2  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300" >
-                        <a href="/login" class="nav-link"><i class="bi bi-box-arrow-in-right "></i> Login</a>
-                    </li>
-                    @endauth
-                </ul>
-                
-            </div>
 
-        </div>
-        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+        </div> --}}
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 " id="navbar-search">
             <div class="relative mt-3 md:hidden">
                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                     <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -104,6 +72,71 @@
                         transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">Information</a>
                 </li>
             </ul>
+        </div>
+
+        <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse px-3 mx-3 rounded-lg " :class="{ 'block': isOpen, 'hidden': !isOpen }">
+            <ul class="flex items-center space-x-4 font-bold ">
+                @auth
+                {{-- <li x-data="{ isOpen: false }" @click.away="isOpen = false" class="relative nav-item dropdown px-5">
+                    
+                    <a @click="isOpen = !isOpen" class="nav-link dropdown-toggle cursor-pointer" role="button" aria-haspopup="true" :aria-expanded="isOpen ? 'true' : 'false'">
+                        Welcome, {{ auth()->user()->name }} <svg class="ml-10 w-6 h-6  text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 8">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"/>
+                          </svg>
+                    </a>
+                    
+                    <ul x-show="isOpen" @click.away="isOpen = false" class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
+                        <li><a class="block px-4 py-2 text-sm text-gray-700" href="/dashboard"> Dashboard</a></li>
+                        <li class="border-t border-gray-200"></li>
+                        <li>
+                            <form action="/logout" method="post" class="block px-4  text-sm text-gray-700">
+                                @csrf
+                                <button type="submit" class="block px-14 py-2 text-sm text-gray-700 ">
+                                    <span data-feather="log-out"></span> Logout
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
+                </li> --}}
+
+
+                <div class="flex items-center mr-10">
+                    <div class="flex items-center ms-3">
+                      <div>
+                        <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                          <span class="sr-only">Open user menu</span>
+                          <img class="w-8 h-8 rounded-full" src="/img/user.png" alt="user photo">
+                        </button>
+                      </div>
+                      <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">
+                        <div class="px-4 py-3" role="none">
+                          <p class="text-sm text-gray-900 dark:text-white" role="none">
+                            {{ auth()->user()->name }}
+                          </p>
+                          <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
+                            {{ auth()->user()->email }}                 
+                        </p>
+                        </div>
+                        <ul class="py-1" role="none">
+                          <li>
+                            <a href="/" class="block px-20 py-2 text-sm text-gray-700 hover:bg-gray-500 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Home</a>
+                          </li>
+                            <li>
+                                <form action="/logout" method="post">
+                                    @csrf
+      
+                                    <button type="submit" class="block px-20 py-2 text-sm text-gray-700 hover:bg-gray-500 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white">
+                                      Logout
+                                    </button>
+                                </form>
+                            </li>
+                @else
+                <li class="nav-item text-white bg-stone-600 rounded-lg px-5 py-2  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300" >
+                    <a href="/login" class="nav-link"><i class="bi bi-box-arrow-in-right "></i> Login</a>
+                </li>
+                @endauth
+            </ul>
+            
         </div>
     </div>
 </nav>

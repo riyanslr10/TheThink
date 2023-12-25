@@ -38,6 +38,7 @@ class AdminCategoryController extends Controller
      */
     public function store(Request $request)
     {
+        
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'slug' => 'required|unique:categories',
@@ -56,7 +57,9 @@ class AdminCategoryController extends Controller
      */
     public function show(Category $category)
     {
-            // Menghitung jumlah kategori yang dimiliki oleh pengguna saat ini
+        return view('dashboard.index', [
+            'category' => $category
+        ]);
     }
 
     /**
