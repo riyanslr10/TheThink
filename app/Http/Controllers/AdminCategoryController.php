@@ -56,7 +56,7 @@ class AdminCategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+            // Menghitung jumlah kategori yang dimiliki oleh pengguna saat ini
     }
 
     /**

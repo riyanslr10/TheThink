@@ -18,18 +18,18 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(mt_rand(2, 8)),
-            'slug' => $this->faker->slug(),
-            'excerpt' => $this->faker->paragraph(),
+            'title' => $this->faker->sentence(mt_rand(2, 8)),  //judul
+            'slug' => $this->faker->slug(), 
+            'excerpt' => $this->faker->paragraph(), 
             'body' => collect($this->faker->paragraphs(mt_rand(50, 100)))
                         ->map(fn ($p) => "<p>$p</p>")
-                        ->implode(''),
-            'user_id' => mt_rand(1, 3),
-            'category_id' => mt_rand(1, 2),
+                        ->implode(''),                    // isi buku
+            'user_id' => mt_rand(1, 3),                  // id user
+            'category_id' => mt_rand(1, 2),             // category
             'author' => $this->faker->name(),           // Penulis
             'publisher' => $this->faker->company(),     // Penerbit
             'publication_year' => $this->faker->year(), // Tahun Terbit
-            'page_count' => mt_rand(50, 500),            // Jumlah Halaman
+            'page_count' => mt_rand(100, 500),            // Jumlah Halaman
             'sinopsis' => $this->faker->paragraph()      // Sinopsis
         ];
     }
