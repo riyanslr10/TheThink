@@ -116,18 +116,32 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.min.js"></script>
 
     <script>
-        const title = document.querySelector('#title');
-        const slug = document.querySelector('#slug');
+  const title = document.querySelector('#title');
+const slug = document.querySelector('#slug');
 
-        title.addEventListener('change', function() {
-            fetch('/dashboard/posts/checkSlug?title=' + title.value)
-                .then(response => response.json())
-                .then(data => slug.value = data.slug)
-        });
+title.addEventListener('change', function() {
+    fetch('/dashboard/posts/checkSlug?title=' + title.value)
+        .then(response => response.json())
+        .then(data => slug.value = data.slug)
+});
 
-        document.addEventListener('trix-file-accept', function(e) {
-            e.preventDefault();     
-        });
+document.addEventListener('trix-file-accept', function(e) {
+    e.preventDefault(); // Mencegah pengguna untuk mengunggah file
+});
+
+document.addEventListener('trix-file-accept', function(e) {
+    const acceptedTypes = ['image/jpeg', 'image/png', 'image/gif']; // Jenis-jenis file gambar yang diizinkan
+    if (!acceptedTypes.includes(e.file.type)) {
+        e.preventDefault(); // Mencegah pengguna untuk mengunggah file selain gambar
+    }
+});
+
+// Menentukan editor Trix hanya dapat menerima file gambar
+document.addEventListener('trix-initialize', function() {
+    const trixInput = document.querySelector('trix-editor');
+    trixInput.setAttribute('data-trix-accept-file-types', 'image/jpeg,image/png,image/gif');
+});
+
 
         function previewImage() {
             const image = document.querySelector('#image');

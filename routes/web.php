@@ -56,17 +56,16 @@ Route::get('/dashboard', function () {
 
 
 Auth::routes();
-
+// Login Google API
 Route::get('auth/google', [App\Http\Controllers\GoogleController::class, 'redirectToGoogle'])->name('google.login');
 Route::get('auth/google/callback', [App\Http\Controllers\GoogleController::class, 'handleGoogleCallback'])->name('google.callback');
 
+//Login
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
-// // Google Route
-// Route::get('/GoogleLogin', [LoginController::class, 'GoogleLogin']);
-// Route::get('/auth/google/callback', ['Auth\LoginController@googleHandle']);
 
+//register
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
