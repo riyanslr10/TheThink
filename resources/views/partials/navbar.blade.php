@@ -1,5 +1,5 @@
 <nav class=" shadow-lg relative z-40 ">
-    <div class="bg-white bg-opacity-80 fixed w-full flex flex-wrap items-center justify-between  py-1 text-center shadow-xl">
+    <div class="bg-white  fixed w-full flex flex-wrap items-center justify-between  py-1 text-center shadow-xl">
         <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse px-3">
             <img src="/img/logo baru.png" class="h-20"  />
             <span class="self-center text-2xl font-bold whitespace-nowrap text-amber-700">TheThink</span>
@@ -37,66 +37,39 @@
                         d="M1 1h15M1 7h15M1 13h15" />
                 </svg>
             </button>
-            <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse px-5 ">
-                <ul class="flex items-center space-x-4">
+            <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse px-3 mx-3 rounded-lg " :class="{ 'block': isOpen, 'hidden': !isOpen }">
+                <ul class="flex items-center space-x-4 font-bold ">
                     @auth
-                        <li class="relative group">
-                            <button
-                                class="flex items-center space-x-1 text-stone-600 text-lg font-bold focus:outline-none focus:ring focus:border-blue-300"
-                                id="userMenu"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                            >
-                                <span>Welcome, {{ auth()->user()->name }}</span>
-                                <svg
-                                    class="w-4 h-4 text-stone-600 text-lg font-bold group-hover:text-gray-300 transition duration-150 ease-in-out"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fill-rule="evenodd"
-                                        d="M10 3a1 1 0 0 1 1 1v4a1 1 0 0 1-2 0V4a1 1 0 0 1 1-1zm0 8a1 1 0 0 1 1 1v4a1 1 0 0 1-2 0v-4a1 1 0 0 1 1-1zm0-8a1 1 0 0 1 1 1v1a1 1 0 0 1-2 0V4a1 1 0 0 1 1-1z"
-                                        clip-rule="evenodd"
-                                    ></path>
-                                </svg>
-                            </button>
-                            <div
-                                class="hidden absolute right-0 mt-2 space-y-2 bg-sttext-stone-600 text-lg font-bold border border-gray-200 rounded-md shadow-md"
-                                aria-labelledby="userMenu"
-                            >
-                                <a
-                                    href="/dashboard"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                >
-                                    <i class="bi bi-layout-text-sidebar-reverse"></i> Dashboard
-                                </a>
-                                <hr class="border-t border-gray-200">
-                                <form action="/logout" method="post">
+                    <li x-data="{ isOpen: false }" @click.away="isOpen = false" class="relative nav-item dropdown px-5">
+                        
+                        <a @click="isOpen = !isOpen" class="nav-link dropdown-toggle cursor-pointer" role="button" aria-haspopup="true" :aria-expanded="isOpen ? 'true' : 'false'">
+                            Welcome, {{ auth()->user()->name }} <svg class="ml-10 w-6 h-6  text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 8">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"/>
+                              </svg>
+                        </a>
+                        
+                        <ul x-show="isOpen" @click.away="isOpen = false" class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
+                            <li><a class="block px-4 py-2 text-sm text-gray-700" href="/dashboard"> Dashboard</a></li>
+                            <li class="border-t border-gray-200"></li>
+                            <li>
+                                <form action="/logout" method="post" class="block px-4  text-sm text-gray-700">
                                     @csrf
-                                    <button
-                                        type="submit"
-                                        class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
-                                    >
-                                        <i class="bi bi-box-arrow-right"></i> Sign Out
+                                    <button type="submit" class="block px-14 py-2 text-sm text-gray-700 ">
+                                        <span data-feather="log-out"></span> Logout
                                     </button>
                                 </form>
-                            </div>
-                        </li>
+                            </li>
+                        </ul>
+                    </li>
                     @else
-                        <li>
-                            <a
-                                href="/login"
-                                class="block py-2 px-12 text-lg font-bold text-stone-600 rounded-lg bg-orange-200 focus:ring-4 focus:outline-none focus:ring-orange-300
-                                transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 "
-                            >
-                                <i class="bi bi-box-arrow-in-right"></i> Sign In
-                            </a>
-                        </li>
+                    <li class="nav-item text-white bg-stone-600 rounded-lg px-5 py-2  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300" >
+                        <a href="/login" class="nav-link"><i class="bi bi-box-arrow-in-right "></i> Login</a>
+                    </li>
                     @endauth
                 </ul>
                 
             </div>
+
         </div>
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
             <div class="relative mt-3 md:hidden">
