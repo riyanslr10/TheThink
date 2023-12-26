@@ -1,9 +1,12 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="container overflow-hidden">
+
+    <div class="container  overflow-hidden">
         <!-- jumbotron -->
-        <div class="relative bg-no-repeat bg-center md:h-[700px] bg-fixed" style="background-image: url('/img/home2.png')">
+        <div class="relative  bg-no-repeat bg-center    md:h-[700px] bg-fixed"
+            style="background-image: url('/img/home2.png')">
+
             <h1 class=" pt-72 pl-32 text-5xl font-bold tracking-tight text-stone-700 dark:text-stone-600"
                 data-aos="fade-right" data-aos-duration="1000">
                 Welcome to <span class="text-amber-700"> The Think</span> Library!
@@ -21,13 +24,17 @@
             </a>
 
 
-            <div id="indicators-carousel" class="relative bottom-[520px] left-[400px]  " data-carousel="static">
+
+            <div id="indicators-carousel" class="relative bottom-[520px] left-[400px] " data-carousel="static">
+
                 <!-- Carousel wrapper -->
                 <div class="relative  overflow-hidden rounded-lg md:h-[900px]  mx-[600px] ">
                     <!-- Item 1 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
                         <img src="/img/tere (1).jpeg"
-                            class="absolute block h-96 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 border-8 border-amber-700 rounded-lg p-9 bg-orange-200 "
+
+                            class="absolute block h-96 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 border-8 border-amber-700 rounded-lg p-9 bg-orange-200"
+
                             alt="...">
                     </div>
                     <!-- Item 2 -->
@@ -87,37 +94,39 @@
         </div>
         {{-- New Release --}}
         <div>
-            <h1 class="text-3xl font-bold py-10 text-center text-stone-600 bg-orange-200">New Release Books</h1>
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 pb-10 bg-orange-200">
-                {{-- 1 --}}
-                <section
-                    class="bg-white bg-opacity-30  flex justify-center items-center gap-x-16 text-stone-600 m-10 rounded-lg"data-aos="
-                                    fade-right" data-aos-duration="1000">
-                    <div class="w-[300px] h-[420px] bg-transparent cursor-pointer group perspective">
-                        <div class="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
-                            <div class="absolute backface-hidden border-2 w-full h-full">
-                                <img src="/img/children.png" class="w-full h-full" />
-                            </div>
+
+            <h1 class="flex justify-center text-3xl font-bold pb-3 pt-10 text-stone-600 bg-orange-200">New Release Books
+            </h1>
+            <div class="grid grid-cols-1 bg-no-repeat bg-center bg-cover h-[600px] md:grid-cols-1 lg:grid-cols-3 pb-[50px] bg-orange-200" ">
+                                            {{-- 1 --}}
+                                        <section
+                                        class="bg-white bg-opacity-30  flex justify-center items-center gap-x-16 text-stone-600 m-10 rounded-lg"data-aos="
+                fade-right" data-aos-duration="1000">
+                <div class="w-[300px] h-[420px] bg-transparent cursor-pointer group perspective">
+                    <div class="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
+                        <div class="absolute backface-hidden border-2 w-full h-full">
+                            <img src="/img/tere (1).jpeg" class="w-full h-full" />
+                        </div>
+                        <div
+                            class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-orange-200 overflow-hidden border-8 border-orange-400">
                             <div
-                                class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-orange-200 overflow-hidden border-8 border-orange-400">
-                                <div
-                                    class="text-center flex flex-col items-center justify-center h-full text-stone-600 px-2 pb-24">
-                                    <h1 class="text-3xl font-extrabold">Matahari</h1>
-                                    <p class="my-2 font-medium">By Tere Liye</p>
-                                    <p>
-                                        "Matahari" (The Sun) is a novel by Indonesian author Tere Liye. The story revolves
-                                        around the central character, Awan, who experiences a tragic incident that changes
-                                        his
-                                        life.
-                                    </p>
-                                    <button
-                                        class="bg-orange-300 px-6 py-2 font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-20 scale-0 group-hover:scale-125">
-                                        Download PDF
-                                    </button>
-                                </div>
+                                class="text-center flex flex-col items-center justify-center h-full text-stone-600 px-2 pb-24">
+                                <h1 class="text-3xl font-extrabold">Matahari</h1>
+                                <p class="my-2 font-medium">By Tere Liye</p>
+                                <p>
+                                    "Matahari" (The Sun) is a novel by Indonesian author Tere Liye. The story revolves
+                                    around the central character, Awan, who experiences a tragic incident that changes his
+                                    life.
+                                </p>
+                                <button
+                                    class="bg-orange-300 px-6 py-2 font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-20 scale-0 group-hover:scale-125">
+                                    Download PDF
+                                </button>
                             </div>
                         </div>
                     </div>
+                </div>
+
                 </section>
                 {{-- 2 --}}
                 <section
@@ -126,7 +135,9 @@
                     <div class="w-[300px] h-[420px] bg-transparent cursor-pointer group perspective">
                         <div class="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
                             <div class="absolute backface-hidden border-2 w-full h-full">
-                                <img src="/img/education.png" class="w-full h-full" />
+
+                                <img src="/img/tere (2).jpeg" class="w-full h-full" />
+
                             </div>
                             <div
                                 class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-orange-200 overflow-hidden border-8 border-orange-400">
@@ -155,7 +166,9 @@
                     <div class="w-[300px] h-[420px] bg-transparent cursor-pointer group perspective">
                         <div class="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
                             <div class="absolute backface-hidden border-2 w-full h-full">
-                                <img src="/img/novel.png" class="w-full h-full" />
+
+                                <img src="/img/tere (3).jpeg" class="w-full h-full" />
+
                             </div>
                             <div
                                 class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-orange-200 overflow-hidden border-8 border-orange-400">
@@ -178,6 +191,7 @@
                     </div>
                 </section>
             </div>
+
 
 
         </div>

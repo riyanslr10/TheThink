@@ -37,6 +37,7 @@
 
         {{-- CARD BOOK --}}
         @if ($posts->count())
+
             <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 @foreach ($posts as $post)
                     <div
@@ -63,6 +64,7 @@
                                     DETAIL
                                 </button>
                             </a>
+
                         </div>
                     </div>
                 @endforeach
