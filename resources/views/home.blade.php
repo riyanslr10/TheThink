@@ -1,10 +1,12 @@
 @extends('layouts.main')
 
 @section('container')
+
     <div class="container  overflow-hidden">
         <!-- jumbotron -->
         <div class="relative  bg-no-repeat bg-center    md:h-[700px] bg-fixed"
             style="background-image: url('/img/home2.png')">
+
             <h1 class=" pt-72 pl-32 text-5xl font-bold tracking-tight text-stone-700 dark:text-stone-600"
                 data-aos="fade-right" data-aos-duration="1000">
                 Welcome to <span class="text-amber-700"> The Think</span> Library!
@@ -22,13 +24,17 @@
             </a>
 
 
+
             <div id="indicators-carousel" class="relative bottom-[520px] left-[400px] " data-carousel="static">
+
                 <!-- Carousel wrapper -->
                 <div class="relative  overflow-hidden rounded-lg md:h-[900px]  mx-[600px] ">
                     <!-- Item 1 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
                         <img src="/img/tere (1).jpeg"
+
                             class="absolute block h-96 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 border-8 border-amber-700 rounded-lg p-9 bg-orange-200"
+
                             alt="...">
                     </div>
                     <!-- Item 2 -->
@@ -88,6 +94,7 @@
         </div>
         {{-- New Release --}}
         <div>
+
             <h1 class="flex justify-center text-3xl font-bold pb-3 pt-10 text-stone-600 bg-orange-200">New Release Books
             </h1>
             <div class="grid grid-cols-1 bg-no-repeat bg-center bg-cover h-[600px] md:grid-cols-1 lg:grid-cols-3 pb-[50px] bg-orange-200" ">
@@ -119,6 +126,7 @@
                         </div>
                     </div>
                 </div>
+
                 </section>
                 {{-- 2 --}}
                 <section
@@ -127,7 +135,9 @@
                     <div class="w-[300px] h-[420px] bg-transparent cursor-pointer group perspective">
                         <div class="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
                             <div class="absolute backface-hidden border-2 w-full h-full">
+
                                 <img src="/img/tere (2).jpeg" class="w-full h-full" />
+
                             </div>
                             <div
                                 class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-orange-200 overflow-hidden border-8 border-orange-400">
@@ -156,7 +166,9 @@
                     <div class="w-[300px] h-[420px] bg-transparent cursor-pointer group perspective">
                         <div class="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
                             <div class="absolute backface-hidden border-2 w-full h-full">
+
                                 <img src="/img/tere (3).jpeg" class="w-full h-full" />
+
                             </div>
                             <div
                                 class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-orange-200 overflow-hidden border-8 border-orange-400">
@@ -179,6 +191,7 @@
                     </div>
                 </section>
             </div>
+
 
 
         </div>

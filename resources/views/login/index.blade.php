@@ -54,7 +54,7 @@
                     <div class="bg-orange-200 bg-opacity-60 pl-36 mx-[500px] py-10 rounded-lg shadow-lg">
                         <form class="" action="/login" method="POST">
                             <a href="{{ route('google.login') }}">
-                                <button type="button" class="text-white bg-orange-300 bg-opacity-80 hover:bg-orange-400 focus:ring-4 focus:outline-none focus:ring-bg-orange-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 me-2 ">
+                                <button type="button" class="text-white bg-orange-300 bg-opacity-80 hover:bg-orange-400 focus:ring-4 focus:outline-none focus:ring-orange-400 font-medium rounded-lg text-sm px-12 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 me-2 ">
                                     <svg class="w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 19">
                                     <path fill-rule="evenodd" d="M8.842 18.083a8.8 8.8 0 0 1-8.65-8.948 8.841 8.841 0 0 1 8.8-8.652h.153a8.464 8.464 0 0 1 5.7 2.257l-2.193 2.038A5.27 5.27 0 0 0 9.09 3.4a5.882 5.882 0 0 0-.2 11.76h.124a5.091 5.091 0 0 0 5.248-4.057L14.3 11H9V8h8.34c.066.543.095 1.09.088 1.636-.086 5.053-3.463 8.449-8.4 8.449l-.186-.002Z" clip-rule="evenodd"/>
                                     </svg>
@@ -101,8 +101,7 @@
                                 {{-- button login --}}
                                 <div>
                                     <button type="submit"
-                                            class="flex mt-4 mb-4 justify-center rounded-md bg-orange-300 bg-opacity-80 hover:bg-orange-400 px-3 py-1.5 text-lg font-bold leading-6 text-white shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400
-                                            transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                                            class="block mt-4 justify-center rounded-md bg-orange-300 bg-opacity-80 hover:bg-orange-400  w-60 h-10 text-center text-lg font-bold leading-6 text-white shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                                             Login
                                     </button>
                                 </div>
