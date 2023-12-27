@@ -1,5 +1,5 @@
 <nav class=" shadow-lg relative z-40">
-    <div class="bg-white fixed w-full flex flex-wrap items-center justify-between py-1 text-center shadow-xl mx-auto">
+    <div class="bg-white md:fixed w-full flex flex-wrap items-center justify-between py-1 text-center shadow-xl mx-auto">
         <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse px-3">
             <img src="/img/logo baru.png" class="h-20" />
             <span class="flex text-2xl sm:text-justify font-bold whitespace-nowrap text-amber-700">TheThink</span>
@@ -29,7 +29,7 @@
                     placeholder="Search...">
             </div>
             <button data-collapse-toggle="navbar-search" type="button"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-900 rounded-lg bg-orange-200 sm:hidden"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-900 rounded-lg bg-orange-200 lg:hidden hover:translate-x-1"
                 aria-controls="navbar-search" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -39,9 +39,10 @@
                 </svg>
             </button>
 
-            
-            <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse px-3 mx-3 rounded-lg " :class="{ 'block': isOpen, 'hidden': !isOpen }">
-                <ul class="flex items-center space-x-4 font-bold ">
+
+            <div class="hidden md:flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse px-3 mx-3 rounded-lg"
+                :class="{ 'block': isOpen, 'hidden': !isOpen }">
+                <ul class="hidden lg:flex items-center space-x-4 font-bold ">
 
                     @auth
                         <li class="relative group">
@@ -83,7 +84,7 @@
 
             </div>
         </div>
-        <div class="items-center justify-between w-full sm:flex sm:w-auto sm:order-1" id="navbar-search">
+        <div class="items-center justify-between w-full sm:flex sm:w-auto sm:order-1 hidden" id="navbar-search">
             <div class="relative mt-3 sm:hidden">
                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                     <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -97,7 +98,7 @@
                     placeholder="Search...">
             </div>
             <ul
-                class="flex flex-col p-4 sm:p-0 mt-4  font-bold border border-gray-100 rounded-sm sm:space-x-8 rtl:space-x-reverse sm:flex-row sm:mt-0 sm:border-0 text-left sm:pl-10">
+                class="md:hidden lg:flex flex-col p-4 sm:p-0 mt-4  font-bold border border-gray-100 rounded-sm sm:space-x-8 rtl:space-x-reverse sm:flex-row sm:mt-0 sm:border-0 text-left sm:pl-10">
                 <li>
                     <a href="/"
                         class="block py-2 px-3 text-lg font-bold text-stone-600 rounded sm:
