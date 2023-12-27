@@ -1,24 +1,21 @@
 @extends('layouts.main')
 
 @section('container')
-
-    <div class="container  overflow-hidden">
+    <div class="container overflow-hidden">
         <!-- jumbotron -->
-        <div class="relative  bg-no-repeat bg-center    md:h-[700px] bg-fixed"
-            style="background-image: url('/img/home2.png')">
+        <div class="relative bg-no-repeat bg-center md:h-[700px] bg-fixed" style="background-image: url('/img/home2.png')">
 
-            <h1 class=" pt-72 pl-32 text-5xl font-bold tracking-tight text-stone-700 dark:text-stone-600"
-                data-aos="fade-right" data-aos-duration="1000">
+            <h1 class="md:pt-72 md:pl-32 pl-5 pt-10 md:text-5xl text-2xl font-bold tracking-tight text-stone-700"
+                data-aos="fade-right"data-aos-duration="1000">
                 Welcome to <span class="text-amber-700"> The Think</span> Library!
             </h1>
-            <h1 class="  pl-32 text-4xl font-bold tracking-tight text-stone-600 dark:text-white" data-aos="fade-right"
+            <h1 class="md:pl-32 pl-5 md:text-4xl text-1x1 pb-5 font-bold tracking-tight text-stone-700" data-aos="fade-right"
                 data-aos-duration="1000">
                 Explore Our Latest Collections
             </h1>
             <a href="/posts">
                 <button type="button"
-                    class="ml-32 mt-5 text-stone-600 bg-orange-200 hover:bg-orange-300 focus:ring-4 focus:ring-orange-300 font-bold rounded-lg text-lg px-3 py-2.5 me-2 mb-2  focus:outline-none
-                animate-bounce">
+                    class="md:ml-32  ml-5 md:mt-5 mb-10 text-stone-600 bg-orange-200 hover:bg-orange-300 focus:ring-4 focus:ring-orange-300 font-bold rounded-lg md:text-lg text-sm px-3 py-2.5 me-2 md:mb-2 focus:outline-none animate-bounce ">
                     Explore
                 </button>
             </a>
@@ -28,13 +25,11 @@
             <div id="indicators-carousel" class="relative bottom-[520px] left-[400px] " data-carousel="static">
 
                 <!-- Carousel wrapper -->
-                <div class="relative  overflow-hidden rounded-lg md:h-[900px]  mx-[600px] ">
+                <div class="relative overflow-hidden rounded-lg md:h-[900px]  md:mx-[500px] ">
                     <!-- Item 1 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
                         <img src="/img/tere (1).jpeg"
-
                             class="absolute block h-96 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 border-8 border-amber-700 rounded-lg p-9 bg-orange-200"
-
                             alt="...">
                     </div>
                     <!-- Item 2 -->
@@ -65,7 +60,7 @@
 
                 <!-- Slider controls -->
                 <button type="button"
-                    class=" absolute bottom-[430px] start-0 z-30 ml-[480px] flex items-center justify-center  px-4 cursor-pointer group focus:outline-none"
+                    class="flex absolute bottom-[430px] start-0 z-30 ml-[480px] px-4 items-center justify-center cursor-pointer group focus:outline-none"
                     data-carousel-prev>
                     <span
                         class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-stone-600 dark:group-focus:ring-gray-800/70 group-focus:outline-none">
@@ -78,7 +73,7 @@
                     </span>
                 </button>
                 <button type="button"
-                    class="absolute bottom-[430px] end-0 z-30 mr-[500px] flex items-center justify-center  px-4 cursor-pointer group focus:outline-none"
+                    class="hidden lg:absolute bottom-[430px] end-0 z-30 mr-[500px] lg:flex items-center justify-center px-4 cursor-pointer group focus:outline-none"
                     data-carousel-next>
                     <span
                         class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-stone-600 dark:group-focus:ring-gray-800/70 group-focus:outline-none">
@@ -95,37 +90,40 @@
         {{-- New Release --}}
         <div>
 
-            <h1 class="flex justify-center text-3xl font-bold pb-3 pt-10 text-stone-600 bg-orange-200">New Release Books
+            <h1 class="flex justify-center text-3xl font-bold pb-3 pt-10 text-stone-600 bg-orange-200">
+                New Release Books
             </h1>
-            <div class="grid grid-cols-1 bg-no-repeat bg-center bg-cover h-[600px] md:grid-cols-1 lg:grid-cols-3 pb-[50px] bg-orange-200" ">
-                                            {{-- 1 --}}
-                                        <section
-                                        class="bg-white bg-opacity-30  flex justify-center items-center gap-x-16 text-stone-600 m-10 rounded-lg"data-aos="
-                fade-right" data-aos-duration="1000">
-                <div class="w-[300px] h-[420px] bg-transparent cursor-pointer group perspective">
-                    <div class="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
-                        <div class="absolute backface-hidden border-2 w-full h-full">
-                            <img src="/img/tere (1).jpeg" class="w-full h-full" />
-                        </div>
-                        <div
-                            class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-orange-200 overflow-hidden border-8 border-orange-400">
+            <div
+                class="grid grid-cols-1 bg-no-repeat bg-center bg-cover lg:h-[600px] md:grid-cols-1 lg:grid-cols-3 pb-[50px] bg-orange-200">
+                {{-- 1 --}}
+                <section
+                    class="bg-white bg-opacity-30  flex justify-center items-center gap-x-16 text-stone-600 m-10 rounded-lg"data-aos="fade-right"
+                    data-aos-duration="1000">
+                    <div class="w-[300px] h-[420px] bg-transparent cursor-pointer group perspective">
+                        <div class="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
+                            <div class="absolute backface-hidden border-2 w-full h-full">
+                                <img src="/img/tere (1).jpeg" class="w-full h-full" />
+                            </div>
                             <div
-                                class="text-center flex flex-col items-center justify-center h-full text-stone-600 px-2 pb-24">
-                                <h1 class="text-3xl font-extrabold">Matahari</h1>
-                                <p class="my-2 font-medium">By Tere Liye</p>
-                                <p>
-                                    "Matahari" (The Sun) is a novel by Indonesian author Tere Liye. The story revolves
-                                    around the central character, Awan, who experiences a tragic incident that changes his
-                                    life.
-                                </p>
-                                <button
-                                    class="bg-orange-300 px-6 py-2 font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-20 scale-0 group-hover:scale-125">
-                                    Download PDF
-                                </button>
+                                class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-orange-200 overflow-hidden border-8 border-orange-400">
+                                <div
+                                    class="text-center flex flex-col items-center justify-center h-full text-stone-600 px-2 pb-24">
+                                    <h1 class="text-3xl font-extrabold">Matahari</h1>
+                                    <p class="my-2 font-medium">By Tere Liye</p>
+                                    <p>
+                                        "Matahari" (The Sun) is a novel by Indonesian author Tere Liye. The story revolves
+                                        around the central character, Awan, who experiences a tragic incident that changes
+                                        his
+                                        life.
+                                    </p>
+                                    <button
+                                        class="bg-orange-300 px-6 py-2 font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-20 scale-0 group-hover:scale-125">
+                                        Download PDF
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
                 </section>
                 {{-- 2 --}}
@@ -171,7 +169,7 @@
 
                             </div>
                             <div
-                                class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-orange-200 overflow-hidden border-8 border-orange-400">
+                                class="flex my-rotate-y-180 backface-hidden w-full h-full bg-orange-200 overflow-hidden border-8 border-orange-400">
                                 <div
                                     class="text-center flex flex-col items-center justify-center h-full text-stone-600 px-2 pb-24">
                                     <h1 class="text-3xl font-extrabold">Bulan</h1>
