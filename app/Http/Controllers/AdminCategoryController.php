@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Routing\Controller;
+
 
 class AdminCategoryController extends Controller
 {
@@ -18,6 +20,8 @@ class AdminCategoryController extends Controller
         return view('dashboard.categories.index', [
             'categories' => Category::all()
         ]);
+
+        
     }
 
     /**
