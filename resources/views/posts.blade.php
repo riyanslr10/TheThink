@@ -3,25 +3,30 @@
 @section('container')
 
 <div class="container">        
-        <h1 class="flex justify-center mb-10 pb-10  text-4xl font-bold pt-28 bg-orange-300 text-stone-600">{{ $title }}</h1>
+        <h1 class="flex justify-center mb-10 pb-10  text-4xl font-bold pt-28 bg-orange-300 text-stone-600">
+            {{ $title }}
+        </h1>
         
         <div class="flex justify-center mb-3">
             <div class="md:w-1/2">
-                <form action="/posts">
+                {{-- Form Pencarian --}}
+                <form action="/posts" method="GET" id="searchForm" class="flex justify-center mx-auto w-full xl:w-3/4 lg:w-11/12 my-10 rounded-s-xl p-2">
+                    {{-- Input Hidden untuk Kategori dan Penulis Posting --}}
                     @if(request('category'))
                         <input type="hidden" name="category" value="{{ request('category') }}">
                     @endif
-        
-                    @if(request('author'))
-                        <input type="hidden" name="author" value="{{ request('author') }}">
+
+                    @if(request('postauthor'))
+                        <input type="hidden" name="postauthor" value="{{ request('postauthor') }}">
                     @endif
-        
-                    <div class="flex items-center mb-3">
-                        <input type="text" class="w-full mx-2 px-4 py-2 border border-orange-200 rounded-l focus:border-orange-300" placeholder="Search.." name="search" value="{{ request('search') }}">
-                        <div class="input-group-append">
-                            <button class="bg-orange-300 text-stone-600 font-bold px-4 py-2 rounded-r" type="submit">Search</button>
-                        </div>
-                    </div>
+
+                    {{-- Ikon pencarian --}}
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 my-auto m-2" style="color: gray" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6–6m2–5a7 7 0 11–14 0 7 7 0 0114 0z" />
+                    </svg>
+                    
+                    {{-- Input untuk memasukkan teks pencarian --}}
+                    <input type="text" placeholder="Search" id="searchInput" class="w-full focus:outline-none" name="search">
                 </form>
             </div>
         </div>
