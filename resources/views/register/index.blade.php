@@ -14,7 +14,7 @@
 
 </head>
 
-<body class="bg-no-repeat bg-center bg-cover" style="background-image: url('/img/perpuslogin.jpg')">
+<body class="bg-no-repeat bg-center bg-cover mt-20 py-20" style="background-image: url('/img/perpuslogin.jpg')">
 
     <div class="flex min-h-screen items-center justify-center px-4 lg:px-8 mt-20">
         <main class="bg-orange-200 bg-opacity-60 p-6 rounded-lg shadow-lg max-w-md w-full">
