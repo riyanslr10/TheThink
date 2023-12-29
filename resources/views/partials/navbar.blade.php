@@ -70,14 +70,14 @@
                 </li>
 
                 <li>
-                    <a href="/info"
+                    <a href="/api/info"
                         class="block py-2 px-3 text-lg font-bold text-stone-600  rounded-lg 
                         transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 sm:bg-orange-200">Information</a>
                 </li>
                 <li>
-                    <a href="/login"
-                        class="sm:hidden block py-2 px-3 text-lg font-bold text-stone-600  rounded-lg 
-                        transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">Login</a>
+                <a href="/login" class="sm:hidden block py-2 px-3 text-lg font-bold text-stone-600  rounded-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+                    Login
+                </a>
                 </li>
             </ul>
         </div>
@@ -127,7 +127,7 @@
                         </div>
                         <ul class="py-1" role="none">
                           <li>
-                            <a href="/" class="block px-20 py-2 text-sm text-gray-700 hover:bg-gray-500 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Home</a>
+                            <a href="/dashboard" class="block px-20 py-2 text-sm text-gray-700 hover:bg-gray-500 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Dashboard</a>
                           </li>
                             <li>
                                 <form action="/logout" method="post">
