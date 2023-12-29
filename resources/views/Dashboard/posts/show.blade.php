@@ -24,6 +24,7 @@
 
     <div class="my-3 text-lg">
         <p><strong>Author:</strong> {{ $post->author }}</p>
+        <p><strong>Category:</strong> {{ $post->category->name }}</p>
         <p><strong>Publisher:</strong> {{ $post->publisher }}</p>
         <p><strong>Publication Year:</strong> {{ $post->publication_year }}</p>
         <p><strong>Page Count:</strong> {{ $post->page_count }}</p>

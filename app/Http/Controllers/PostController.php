@@ -9,23 +9,32 @@ use App\Models\User;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {  
         $title = '';
-        if(request('category')) {
-            $category = Category::firstWhere('slug', request('category'));
-            $title = ' in ' . $category->name;
+
+        if($request->has('category')) {
+            $category = Category::firstWhere('slug', $request->category);
+            if($category) {
+                $title = ' in ' . $category->name;
+            }
         }
 
-        if(request('author')) {
-            $author = User::firstWhere('name', request('author'));
-            $title = ' by ' . $author;
+        if($request->has('postauthor')) {
+            $postauthor = User::firstWhere('name', $request->postauthor);
+            if($postauthor) {
+                $title = ' by ' . $postauthor->name;
+            }
         }
+
+        $posts = Post::latest()
+            ->filter($request->only(['search', 'category', 'postauthor']))
+            ->paginate(6)
+            ->withQueryString();
 
         return view('posts', [
             "title" => "All Posts" . $title,
-            "active" => 'posts',
-            "posts" => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(6)->withQueryString()
+            "posts" => $posts,
         ]);
     }
 
@@ -33,7 +42,6 @@ class PostController extends Controller
     {
         return view('post', [
             "title" => "Single Post",
-            "active" => 'posts',
             "post" => $post
         ]);
     }
