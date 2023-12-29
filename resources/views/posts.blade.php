@@ -2,37 +2,33 @@
 
 @section('container')
 
-    <div class="container">
-        <h1 class="text-center mb-10 pb-10 text-4xl font-bold pt-28 bg-orange-300 text-stone-600">{{ $title }}</h1>
-
-        <!-- Center the search form -->
-        <div class="flex justify-center mb-6"> <!-- Adding justify-center here -->
-            <form>
-                <label for="search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                <div class="relative">
-                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                        <svg class="w-4 h-4 text-orange-500 dark:text-orange-400" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                        </svg>
-                    </div>
-
-                    @if (request('category'))
+<div class="container">        
+        <h1 class="flex justify-center mb-10 pb-10  text-4xl font-bold pt-28 bg-orange-300 text-stone-600">
+            {{ $title }}
+        </h1>
+        
+        <div class="flex justify-center mb-3">
+            <div class="md:w-1/2">
+                {{-- Form Pencarian --}}
+                <form action="/posts" method="GET" id="searchForm" class="flex justify-center mx-auto w-full xl:w-3/4 lg:w-11/12 my-10 rounded-s-xl p-2">
+                    {{-- Input Hidden untuk Kategori dan Penulis Posting --}}
+                    @if(request('category'))
                         <input type="hidden" name="category" value="{{ request('category') }}">
                     @endif
 
-                    @if (request('author'))
-                        <input type="hidden" name="author" value="{{ request('author') }}">
+                    @if(request('postauthor'))
+                        <input type="hidden" name="postauthor" value="{{ request('postauthor') }}">
                     @endif
 
-                    <input type="search" id="search"
-                        class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-orange-50 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500"
-                        placeholder="Search" name="search" value="{{ request('search') }}" required>
-                    <button type="submit"
-                        class="text-white absolute end-2.5 bottom-2.5 bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">Search</button>
-                </div>
-            </form>
+                    {{-- Ikon pencarian --}}
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 my-auto m-2" style="color: gray" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6–6m2–5a7 7 0 11–14 0 7 7 0 0114 0z" />
+                    </svg>
+                    
+                    {{-- Input untuk memasukkan teks pencarian --}}
+                    <input type="text" placeholder="Search" id="searchInput" class="w-full focus:outline-none" name="search">
+                </form>
+            </div>
         </div>
 
         {{-- CARD BOOK --}}
@@ -54,8 +50,8 @@
                                 {{ $post->title }}
                             </h5>
                             <h5 class="mb-2 text-md font-bold tracking-tight text-stone-600 dark:text-white">
-                                By. <a href="/posts?author={{ $post->author->username }}" class="text-decoration-none">
-                                    {{ $post->author->name }}
+                                By. <a href="/posts?postauthor={{ $post->postauthor }}" class="text-decoration-none">
+                                    {{ $post->author }}
                                 </a> {{ $post->created_at->diffForHumans() }}
                             </h5>
                             <a href="/post/{{ $post->slug }}">

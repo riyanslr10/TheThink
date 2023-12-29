@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Routing\Controller;
+
 
 class AdminCategoryController extends Controller
 {
@@ -18,6 +20,8 @@ class AdminCategoryController extends Controller
         return view('dashboard.categories.index', [
             'categories' => Category::all()
         ]);
+
+        
     }
 
     /**
@@ -38,6 +42,7 @@ class AdminCategoryController extends Controller
      */
     public function store(Request $request)
     {
+        
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'slug' => 'required|unique:categories',
@@ -56,7 +61,9 @@ class AdminCategoryController extends Controller
      */
     public function show(Category $category)
     {
-            // Menghitung jumlah kategori yang dimiliki oleh pengguna saat ini
+        return view('dashboard.index', [
+            'category' => $category
+        ]);
     }
 
     /**

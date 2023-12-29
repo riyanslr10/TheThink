@@ -13,34 +13,38 @@ class Post extends Model
 
     // protected $fillable = ['title','excerpt','body'];
     protected $guarded = ['id'];
-    protected $with = ['category','author'];    
-
+    protected $with = ['category','postauthor'];    
+    
     public function scopeFilter($query, array $filters)
     {
-        $query->when($filters['search'] ?? false, function($query, $search) {
-            return $query->where('title', 'like', '%' . $search . '%')
-                        ->orWhere('body', 'like', '%' . $search . '%');
-        });
-
-        $query->when($filters['category'] ?? false, function($query, $category) {
-            return $query->whereHas('category', function($query) use ($category) {
-                $query->where('slug', $category);
+        $query->when(isset($filters['search']), function($query) use ($filters) {
+            $search = $filters['search'];
+            $query->where(function ($query) use ($search) {
+                $query->where('title', 'like', '%' . $search . '%')
+                    ->orWhere('body', 'like', '%' . $search . '%');
             });
         });
-
-        $query->when($filters['author'] ?? false, fn($query, $author) => 
-            $query->whereHas('author', fn($query) =>
-                $query->where('username', $author)
-            )
-        );
+    
+        $query->when(isset($filters['category']), function($query) use ($filters) {
+            $query->whereHas('category', function($query) use ($filters) {
+                $query->where('slug', $filters['category']);
+            });
+        });
+    
+        $query->when(isset($filters['postauthor']), function($query) use ($filters) {
+            $query->whereHas('postauthor', function($query) use ($filters) {
+                $query->where('username', $filters['postauthor']);
+            });
+        });
     }
+    
     
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
 
-    public function author()
+    public function postauthor()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
@@ -50,7 +54,7 @@ class Post extends Model
         return 'slug';
     }
 
-    public function Sluggable(): array
+    public function sluggable(): array
     {
         return [
             'slug' => [
@@ -58,4 +62,5 @@ class Post extends Model
             ]
         ];
     }
+    
 }

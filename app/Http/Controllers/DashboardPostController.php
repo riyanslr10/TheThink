@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+// use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
@@ -44,10 +45,10 @@ class DashboardPostController extends Controller
         'category_id' => 'required',
         'author' => 'required|max:255',
         'publisher' => 'required|max:255',
-        'sinopsis' => 'required',
+        'sinopsis' => 'required|max:150',
         'publication_year' => 'required|integer|min:1900',
         'page_count' => 'required|integer|min:1',
-        'image' => 'image|file|max:1024',
+        'image' => 'image|file|min:1024',
         'body' => 'required'
     ]);
 
@@ -141,4 +142,5 @@ class DashboardPostController extends Controller
         $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
         return response()->json(['slug' => $slug]);
     }
+
 }
