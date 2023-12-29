@@ -1,7 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TheThink</title>
@@ -13,9 +13,14 @@
     </style>
 </head>
 
+
 <body class="bg-no-repeat bg-center bg-cover mt-20 py-20" style="background-image: url('/img/perpuslogin.jpg')">
     <div class="flex flex-col items-center justify-center min-h-screen">
         <div class="w-full max-w-sm py-5">
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+
             @if (session()->has('success'))
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
                     role="alert">
@@ -30,6 +35,7 @@
                     </span>
                 </div>
             @endif
+
             @if (session()->has('LoginError'))
                 <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
                     <span class="block sm:inline">{{ session('LoginError') }}</span>
@@ -43,6 +49,7 @@
                     </span>
                 </div>
             @endif
+
         </div>
         <main class="form-signin">
             <h1 class="mt-1 text-center text-5xl font-bold leading-9 tracking-tight text-white">LOGIN</h1>
@@ -98,6 +105,7 @@
             <a href="/register" class="font-semibold leading-6 text-amber-600 hover:text-amber-700">Register Here</a>
         </p>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
 </body>
 

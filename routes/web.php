@@ -33,6 +33,8 @@ Route::get('/posts', [PostController::class, 'index']);
 // Halaman Single Post
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
 
+Route::get('/search', [PostController::class, 'search'])->name('posts.search');
+
 //Halaman info
 Route::get('/info', function () {
     return view('information.information');
@@ -41,19 +43,9 @@ Route::get('/info', function () {
 // Halaman Categories
 Route::get('/categories', function () {
     return view('categories', [
-            'title' => 'Post Categories',
-            'active' => 'categories',
             'categories' => Category::all()  
     ]);
 });
-
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-});
-
-
 
 Auth::routes();
 // Login Google API
@@ -69,14 +61,19 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
+
 // dashboard
 Route::get('/dashboard', function(){
     return view('dashboard.index');
-})->middleware('auth');
-Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])
-->middleware('auth');
-Route::resource('/dashboard/posts', DashboardPostController::class)
-->middleware('auth');
+});
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
+
+
+
 // admin category
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
 Route::get('/dashboard/categories/checkSlug', [AdminCategoryController::class, 'checkSlug'])->middleware('admin');
+
+
+

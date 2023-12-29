@@ -27,10 +27,10 @@ class DatabaseSeeder extends Seeder
             'username'=> 'admin',
             'email'=> 'admin@gmail.com',
             'password'=> bcrypt('12345'),
-            'is_admin' => 'yes',
+            'is_admin' => '1',
         ]);
         
-        User::factory(3)->create();
+        User::factory(1)->create();
 
         Category::create([
             'name' => 'Foods and Drinks',
@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
             'slug' => 'children'
         ]);
 
-        Post::factory(20)->create();
+        Post::factory(40)->create();
 
     }
 }

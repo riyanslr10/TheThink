@@ -3,8 +3,8 @@
 @section('container')
 <div class="p-4 sm:ml-64">
 
-    <div class="flex justify-between flex-wrap items-center pt-3 pb-2 mb-3 border-b">
-        <h1 class="text-2xl">Create New Category</h1>
+    <div class="flex justify-between flex-wrap items-center pt-3 pb-2 mb-3 border-b mt-14">
+        <h1 class="text-2xl font-bold">Create New Category</h1>
     </div>
 
     <div class="col-lg-8">
