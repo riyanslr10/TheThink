@@ -28,6 +28,5 @@
     <script>
       AOS.init();
     </script>
-    <!-- Tambahkan script Alpine.js -->
   </body>
 </html>

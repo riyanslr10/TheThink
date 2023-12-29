@@ -11,20 +11,25 @@
     @if (session()->has('success'))
     <div class="p-4 mt-4 mb-4">
         @if (session('success') === 'delete')
-            <div class="bg-red-500 text-white rounded-md p-4">
-                {{ session('success_message') }}
+            <div class="bg-red-500 text-white rounded-md p-4 flex justify-between items-center">
+                <span>{{ session('success_message') }}</span>
+                <button onclick="this.parentElement.style.display='none'" class="text-white">&times;</button>
             </div>
         @elseif (session('success') === 'edit')
-            <div class="bg-yellow-500 text-white rounded-md p-4">
-                {{ session('success_message') }}
+            <div class="bg-yellow-500 text-white rounded-md p-4 flex justify-between items-center">
+                <span>{{ session('success_message') }}</span>
+                <button onclick="this.parentElement.style.display='none'" class="text-white">&times;</button>
             </div>
         @else
-            <div class="bg-green-500 text-white rounded-md p-4">
-                {{ session('success') }}
+            <div class="bg-green-500 text-white rounded-md p-4 flex justify-between items-center">
+                <span>{{ session('success') }}</span>
+                <button onclick="this.parentElement.style.display='none'" class="text-white">&times;</button>
             </div>
         @endif
     </div>
 @endif
+    
+
 
 
   </div>
