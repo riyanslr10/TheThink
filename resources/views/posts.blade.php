@@ -50,8 +50,8 @@
                                 {{ $post->title }}
                             </h5>
                             <h5 class="mb-2 text-md font-bold tracking-tight text-stone-600 dark:text-white">
-                                By. <a href="/posts?author={{ $post->author->username }}" class="text-decoration-none">
-                                    {{ $post->author->name }}
+                                By. <a href="/posts?postauthor={{ $post->postauthor }}" class="text-decoration-none">
+                                    {{ $post->author }}
                                 </a> {{ $post->created_at->diffForHumans() }}
                             </h5>
                             <a href="/post/{{ $post->slug }}">

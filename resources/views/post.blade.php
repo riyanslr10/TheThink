@@ -74,7 +74,7 @@
         doc.text('Author: {{ $post->author }}', 10, yPos);
         yPos += lineSpacing;
 
-        doc.text('Post Author: {{ $post->postauthor->name }}', 10, yPos);
+        doc.text('Post Author: {{ $post->postauthor }}', 10, yPos);
         yPos += lineSpacing;
 
         doc.text('Publisher: {{ $post->publisher }}', 10, yPos);

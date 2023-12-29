@@ -4,7 +4,7 @@
             <img src="/img/logo baru.png" class="h-20" />
             <span class="flex text-2xl sm:text-justify font-bold whitespace-nowrap text-amber-700">TheThink</span>
         </a>
-        {{-- <div class="flex md:order-2 pl-24">
+        <div class="flex md:order-2 pl-24">
             <button type="submit" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
                 aria-expanded="false"
                 class=" text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1 hidden">
@@ -41,7 +41,7 @@
 
             
 
-        </div> --}}
+        </div>
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 " id="navbar-search">
             <div class="relative mt-3 md:hidden">
                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -56,26 +56,26 @@
                     placeholder="Search...">
             </div>
             <ul
-                class="md:hidden lg:flex flex-col p-4 sm:p-0 mt-4  font-bold border border-gray-100 rounded-sm sm:space-x-8 rtl:space-x-reverse sm:flex-row sm:mt-0 sm:border-0 text-left sm:pl-10">
+                class="md:hidden lg:flex flex-col p-4 sm:p-0 mt-4  font-bold border border-gray-100 rounded-sm sm:space-x-8 rtl:space-x-reverse sm:flex-row sm:mt-0 sm:border-0  sm:pl-10 text-center">
                 <li>
                     <a href="/"
                         class="block py-2 px-3 text-lg font-bold text-stone-600 rounded sm:
-                        transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 bg-orange-200"
+                        transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 "
                         aria-current="page">Home</a>
                 </li>
                 <li>
                     <a href="/categories"
                         class="block py-2 px-3 text-lg font-bold text-stone-600 rounded-lg 
-                        transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 sm:bg-orange-200">Category</a>
+                        transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 ">Category</a>
                 </li>
 
                 <li>
-                    <a href="/api/info"
+                    <a href="/info"
                         class="block py-2 px-3 text-lg font-bold text-stone-600  rounded-lg 
-                        transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 sm:bg-orange-200">Information</a>
+                        transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 ">Information</a>
                 </li>
                 <li>
-                <a href="/login" class="sm:hidden block py-2 px-3 text-lg font-bold text-stone-600  rounded-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+                <a href="/login" class="sm:hidden  block py-2 px-3 text-lg font-bold text-stone-600  rounded-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
                     Login
                 </a>
                 </li>
@@ -139,9 +139,7 @@
                                 </form>
                             </li>
                 @else
-                <li class="nav-item text-white bg-stone-600 rounded-lg px-5 py-2  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300" >
-                    <a href="/login" class="nav-link"><i class="bi bi-box-arrow-in-right "></i> Login</a>
-                </li>
+
                 @endauth
             </ul>
             
