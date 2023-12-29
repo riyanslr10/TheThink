@@ -15,10 +15,9 @@
 </head>
 
 <body class="bg-no-repeat bg-center bg-cover mt-20 py-20" style="background-image: url('/img/perpuslogin.jpg')">
-
-    <div class="flex min-h-screen items-center justify-center px-4 lg:px-8 mt-20">
-        <main class="bg-orange-200 bg-opacity-60 p-6 rounded-lg shadow-lg max-w-md w-full">
-            <h2 class="text-center text-4xl lg:text-5xl font-bold leading-tight text-white mb-6">REGISTER</h2>
+    <h2 class="text-center text-4xl lg:text-5xl font-bold leading-tight text-white mb-5">REGISTER</h2>
+    <div class="flex min-h-screen items-center justify-center px-4 lg:px-8 mt-15">
+        <main class="bg-orange-300 bg-opacity-60 p-6 rounded-lg shadow-lg max-w-md w-full">
             <form action="/register" method="post" class="space-y-4">
                 @csrf
 
@@ -75,7 +74,7 @@
                 </div>
 
                 <button type="submit"
-                    class="w-full bg-orange-300 bg-opacity-80 hover:bg-orange-400 rounded-md text-lg font-bold text-white py-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-300 transform hover:-translate-y-1 hover:scale-110 transition duration-300">
+                    class="w-full bg-orange-500 bg-opacity-80 hover:bg-orange-400 rounded-md text-lg font-bold text-white py-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-300 transform hover:-translate-y-1 hover:scale-110 transition duration-300">
                     Register
                 </button>
 
