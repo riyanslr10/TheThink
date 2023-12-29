@@ -13,7 +13,7 @@
     </style>
 </head>
 
-<body class="bg-no-repeat bg-center bg-cover" style="background-image: url('/img/perpuslogin.jpg')">
+<body class="bg-no-repeat bg-center bg-cover mt-20 py-20" style="background-image: url('/img/perpuslogin.jpg')">
     <div class="flex flex-col items-center justify-center min-h-screen">
         <div class="w-full max-w-sm py-5">
             @if (session()->has('success'))
