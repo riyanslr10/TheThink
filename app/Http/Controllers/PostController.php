@@ -6,26 +6,25 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
-
 class PostController extends Controller
 {
     public function index(Request $request)
     {  
         $title = '';
 
-        if($request->has('category')) {
-            $category = Category::firstWhere('slug', $request->category);
-            if($category) {
-                $title = ' in ' . $category->name;
-            }
-        }
+        // if($request->has('category')) {
+        //     $category = Category::firstWhere('slug', $request->category);
+        //     if($category) {
+        //         $title = ' in ' . $category->name;
+        //     }
+        // }
 
-        if($request->has('postauthor')) {
-            $postauthor = User::firstWhere('name', $request->postauthor);
-            if($postauthor) {
-                $title = ' by ' . $postauthor->name;
-            }
-        }
+        // if($request->has('postauthor')) {
+        //     $postauthor = User::firstWhere('name', $request->postauthor);
+        //     if($postauthor) {
+        //         $title = ' by ' . $postauthor->name;
+        //     }
+        // }
 
         $posts = Post::latest()
             ->filter($request->only(['search', 'category', 'postauthor']))
@@ -33,7 +32,7 @@ class PostController extends Controller
             ->withQueryString();
 
         return view('posts', [
-            "title" => "All Posts" . $title,
+            "title" => "Search Books" . $title,
             "posts" => $posts,
         ]);
     }

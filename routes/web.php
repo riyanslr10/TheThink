@@ -4,6 +4,7 @@ use App\Models\Category;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -32,6 +33,12 @@ Route::get('/', function () {
 Route::get('/posts', [PostController::class, 'index']);
 // Halaman Single Post
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
+// Single API Google Books
+Route::get('/book-detail/{bookId}', [BookController::class, 'showDetail'])->name('book-detail');
+
+
+
+
 //Halaman info
 Route::get('/info', function () {
     return view('information.information');
