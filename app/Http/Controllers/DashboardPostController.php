@@ -48,7 +48,7 @@ class DashboardPostController extends Controller
         'sinopsis' => 'required|max:150',
         'publication_year' => 'required|integer|min:1900',
         'page_count' => 'required|integer|min:1',
-        'image' => 'image|file|min:1024',
+        'image' => 'image|file|max:1080',
         'body' => 'required'
     ]);
 
@@ -96,9 +96,9 @@ class DashboardPostController extends Controller
             'author' => 'required|max:255',
             'publisher' => 'required|max:255',
             'sinopsis' => 'required',
-            'publication_year' => 'required|integer|min:1900',
+            'publication_year' => 'required|integer|min:1500',
             'page_count' => 'required|integer|min:1',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:1080',
             'body' => 'required'
         ];
     

@@ -31,7 +31,7 @@
                     </button> --}}
                     <!-- Tombol untuk mengunduh PDF -->
                     <button type="button" class="text-white text-center md:w-40 bg-orange-300 hover:bg-orange-400 focus:ring-4 focus:ring-amber-600font-medium rounded-lg text-lg font-bold px-3 py-2.5 me-2 my-2 dark:bg-amber-600 dark:hover:bg-amber-700 focus:outline-none dark:focus:ring-amber-700 
-                    transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 " onclick="generatePDF()">Unduh PDF</button>
+                    transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 " onclick="generatePDF()">Download PDF</button>
 
                 <article class=" fs-5 "> <span class="text-lg font-bold">synopsis :</span>
                     {!! $post->sinopsis !!}
@@ -146,8 +146,6 @@
         .catch(error => {
             console.error('There was a problem fetching the book details:', error);
         });
-}
-
 }
 
 </script>
