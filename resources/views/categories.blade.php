@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="container pt-20">
+    <div class="container pt-10 md:pt-28">
         <h1 class="text-3xl font-bold text-center text-stone-600 mb-7   px-6 md:mx-20 lg:mx-60">
             Select the category you are interested in
         </h1>
         <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center px-4 md:px-10 lg:px-20 pb-10 lg:pb-20">
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center px-4 md:px-10 lg:px-20 pb-10 me-4 ms-4">
             @foreach ($categories as $category)
                 {{-- category --}}
                 <div

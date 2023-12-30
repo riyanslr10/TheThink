@@ -1,10 +1,10 @@
-<nav class=" shadow-lg relative z-40">
+<nav class=" shadow-lg relative z-40 overflow-hidden">
     <div class="bg-white md:fixed w-full flex flex-wrap items-center justify-between py-1 text-center shadow-xl mx-auto">
-        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse px-3">
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse px-3 ms-12 md:ms-14">
             <img src="/img/logo baru.png" class="h-20" />
             <span class="flex text-2xl sm:text-justify font-bold whitespace-nowrap text-amber-700">TheThink</span>
         </a>
-        <div class="flex md:order-2 pl-24">
+        <div class="flex md:order-2 ">
             <button type="submit" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
                 aria-expanded="false"
                 class=" text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1 hidden">
@@ -39,7 +39,7 @@
                 </svg>
             </button>
 
-            
+
 
         </div>
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 " id="navbar-search">
@@ -75,17 +75,19 @@
                         transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 ">Information</a>
                 </li>
                 <li>
-                <a href="/login" class="sm:hidden  block py-2 px-3 text-lg font-bold text-stone-600  rounded-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
-                    Login
-                </a>
+                    <a href="/login"
+                        class="sm:hidden  block py-2 px-3 text-lg font-bold text-stone-600  rounded-lg transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+                        Login
+                    </a>
                 </li>
             </ul>
         </div>
 
-        <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse px-3 mx-3 rounded-lg " :class="{ 'block': isOpen, 'hidden': !isOpen }">
+        <div class="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse px-3 mx-3 rounded-lg "
+            :class="{ 'block': isOpen, 'hidden': !isOpen }">
             <ul class="flex items-center space-x-4 font-bold ">
                 @auth
-                {{-- <li x-data="{ isOpen: false }" @click.away="isOpen = false" class="relative nav-item dropdown px-5">
+                    {{-- <li x-data="{ isOpen: false }" @click.away="isOpen = false" class="relative nav-item dropdown px-5">
                     
                     <a @click="isOpen = !isOpen" class="nav-link dropdown-toggle cursor-pointer" role="button" aria-haspopup="true" :aria-expanded="isOpen ? 'true' : 'false'">
                         Welcome, {{ auth()->user()->name }} <svg class="ml-10 w-6 h-6  text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 8">
@@ -108,41 +110,47 @@
                 </li> --}}
 
 
-                <div class="flex items-center mr-10">
-                    <div class="flex items-center ms-3">
-                      <div>
-                        <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">
-                          <span class="sr-only">Open user menu</span>
-                          <img class="w-8 h-8 rounded-full" src="/img/user.png" alt="user photo">
-                        </button>
-                      </div>
-                      <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">
-                        <div class="px-4 py-3" role="none">
-                          <p class="text-sm text-gray-900 dark:text-white" role="none">
-                            {{ auth()->user()->name }}
-                          </p>
-                          <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
-                            {{ auth()->user()->email }}                 
-                        </p>
-                        </div>
-                        <ul class="py-1" role="none">
-                          <li>
-                            <a href="/dashboard" class="block px-20 py-2 text-sm text-gray-700 hover:bg-gray-500 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Dashboard</a>
-                          </li>
-                            <li>
-                                <form action="/logout" method="post">
-                                    @csrf
-      
-                                    <button type="submit" class="block px-20 py-2 text-sm text-gray-700 hover:bg-gray-500 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white">
-                                      Logout
-                                    </button>
-                                </form>
-                            </li>
-                @else
+                    <div class="flex items-center mr-10">
+                        <div class="flex items-center ms-3">
+                            <div>
+                                <button type="button"
+                                    class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                                    aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                                    <span class="sr-only">Open user menu</span>
+                                    <img class="w-8 h-8 rounded-full" src="/img/user.png" alt="user photo">
+                                </button>
+                            </div>
+                            <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+                                id="dropdown-user">
+                                <div class="px-4 py-3" role="none">
+                                    <p class="text-sm text-gray-900 dark:text-white" role="none">
+                                        {{ auth()->user()->name }}
+                                    </p>
+                                    <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
+                                        role="none">
+                                        {{ auth()->user()->email }}
+                                    </p>
+                                </div>
+                                <ul class="py-1" role="none">
+                                    <li>
+                                        <a href="/dashboard"
+                                            class="block px-20 py-2 text-sm text-gray-700 hover:bg-orange-200 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                            role="menuitem">Dashboard</a>
+                                    </li>
+                                    <li>
+                                        <form action="/logout" method="post">
+                                            @csrf
 
-                @endauth
-            </ul>
-            
-        </div>
-    </div>
+                                            <button type="submit"
+                                                class="block px-20 py-2 text-sm text-gray-700 hover:bg-orange-200 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white">
+                                                Logout
+                                            </button>
+                                        </form>
+                                    </li>
+                                @else
+                                @endauth
+                            </ul>
+
+                        </div>
+                    </div>
 </nav>
