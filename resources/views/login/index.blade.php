@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,6 +20,7 @@
         <div class="w-full max-w-sm py-5">
 
             @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 
 
             @if (session()->has('success'))
@@ -53,6 +55,7 @@
         </div>
         <main class="form-signin">
             <h1 class="mt-1 text-center text-5xl font-bold leading-9 tracking-tight text-white">LOGIN</h1>
+
             <div class="bg-orange-300 bg-opacity-60 px-14 py-7 rounded-lg shadow-lg max-w-md w-full mt-5">
                 <a href="/">
                     <button type="submit"
@@ -71,6 +74,7 @@
                     <a href="{{ route('google.login') }}" class="google-btn">
                         <button type="button"
                             class="text-white bg-orange-500 bg-opacity-80 hover:bg-orange-400 focus:ring-4 focus:outline-none focus:ring-orange-400 font-medium rounded-lg text-sm px-12 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 me-2 transform hover:-translate-y-1 hover:scale-110 transition duration-300">
+
                             <svg class="w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor" viewBox="0 0 18 19">
                                 <path fill-rule="evenodd"
@@ -80,20 +84,25 @@
                             Sign in with Google
                         </button>
                     </a>
+
                     <div class="flex items-center justify-center my-2 space-x-2">
+
                         <div class="border-t-2 border-white flex-grow"></div>
                         <h2 class="text-lg font-bold leading-9 tracking-tight text-white">OR</h2>
                         <div class="border-t-2 border-white flex-grow"></div>
                     </div>
                     @csrf
                     <div class="form-floating mb-4">
+
                         <label for="email" class="block text-sm font-medium leading-6 text-stone-950">
+
                             Email</label>
                         @error('email')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
+
                         <div class="relative">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -129,6 +138,7 @@
                     <div>
                         <button type="submit"
                             class="block mt-4 justify-center rounded-md bg-orange-500 bg-opacity-80 hover:bg-orange-400 w-full sm:w-60 h-10 text-center text-lg font-bold leading-6 text-white shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 ">
+
                             Login
                         </button>
                     </div>
@@ -137,8 +147,10 @@
         </main>
         <p class="mt-3 mb-6 text-center text-sm text-white">
             Don't have an account yet?
+
             <a href="/register"
                 class="font-semibold leading-6 text-amber-600 hover:text-amber-700 hover:underline">Register Here</a>
+
         </p>
     </div>
 
