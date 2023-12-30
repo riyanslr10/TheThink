@@ -34,7 +34,7 @@ Route::get('/posts', [PostController::class, 'index']);
 // Halaman Single Post
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
 // Single API Google Books
-Route::get('/book-detail/${bookId}', [BookController::class, 'show']);
+Route::get('/book-detail/{bookId}', [BookController::class, 'showDetail'])->name('book-detail');
 
 
 

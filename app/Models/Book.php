@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'authors', 'description']; // Sesuaikan dengan kolom yang ingin diisi
+    protected $fillable = ['title', 'authors', 'description'];
 
 }
