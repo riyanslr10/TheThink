@@ -33,6 +33,7 @@
                     Home
                 </button>
             </a>
+
             <form action="/register" method="post" class="space-y-4">
                 @csrf
 
@@ -55,11 +56,13 @@
                             </div>
                         @enderror
                     </div>
+
                 </div>
 
                 {{-- username --}}
                 <div>
                     <label for="username" class="block text-sm font-bold text-stone-950">Username</label>
+
                     <div class="relative">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -76,10 +79,12 @@
                             </div>
                         @enderror
                     </div>
+
                 </div>
 
                 {{-- Email --}}
                 <div>
+
                     <label for="email" class="block text-sm font-bold text-stone-950">Email </label>
                     <div class="relative">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"><svg
@@ -97,11 +102,12 @@
                             </div>
                         @enderror
                     </div>
+
                 </div>
 
                 {{-- password --}}
                 <div>
-                    <label for="password" class="block text-sm font-bold text-stone-950">Password</label>
+
                     <div class="relative">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"><svg
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -129,6 +135,7 @@
                         class="w-full mt-2 bg-orange-500 bg-opacity-80 hover:bg-orange-400 rounded-md text-lg font-bold text-white py-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-300 transform hover:-translate-y-1 hover:scale-110 transition duration-300">
                         Register
                     </button>
+
 
             </form>
         </main>
