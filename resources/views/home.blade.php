@@ -15,9 +15,15 @@
             </h1>
             <a href="/posts">
                 <button type="button"
-                    class="md:ml-32  ml-5 md:mt-5 mb-10 text-stone-600 bg-orange-200 hover:bg-orange-300 focus:ring-4 focus:ring-orange-300 font-bold rounded-lg md:text-lg text-sm px-3 py-2.5 me-2 md:mb-2 focus:outline-none animate-bounce ">
+                    class="md:ml-32 ml-5 md:mt-5 mb-10 text-stone-600 bg-orange-200 hover:bg-orange-300 focus:ring-4 focus:ring-orange-300 font-bold rounded-lg md:text-lg text-sm px-3 py-2.5 me-2 md:mb-2 focus:outline-none animate-bounce">
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white inline-block ml-2" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
                     Explore
                 </button>
+
             </a>
 
 
@@ -62,8 +68,7 @@
                 <button type="button"
                     class="flex absolute bottom-[430px] start-0 z-30 ml-[480px] px-4 items-center justify-center cursor-pointer group focus:outline-none"
                     data-carousel-prev>
-                    <span
-                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-stone-600 dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full ">
                         <svg class= "w-8 h-8 text-stone-600 dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -75,8 +80,7 @@
                 <button type="button"
                     class="hidden lg:absolute bottom-[430px] end-0 z-30 mr-[500px] lg:flex items-center justify-center px-4 cursor-pointer group focus:outline-none"
                     data-carousel-next>
-                    <span
-                        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-stone-600 dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full ">
                         <svg class= "w-8 h-8 text-stone-600 dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

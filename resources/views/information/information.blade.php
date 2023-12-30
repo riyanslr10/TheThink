@@ -6,11 +6,11 @@
         {{-- New Release --}}
         <div>
 
-            <h1 class="flex justify-center text-3xl font-bold pb-3 pt-10 text-stone-600 ">
+            <h1 class="flex justify-center text-5xl font-bold pb-3 pt-10 text-stone-600 md:pt-28">
                 Fantastic 4
             </h1>
             <div
-                class="grid grid-cols-1 bg-no-repeat bg-center bg-cover lg:h-[600px] md:grid-cols-1 lg:grid-cols-4 pb-[50px] ">
+                class="grid grid-cols-1 bg-no-repeat bg-center bg-cover lg:h-[570px] md:grid-cols-1 lg:grid-cols-4 pb-[50px] ">
                 {{-- 1 --}}
                 <section
                     class="bg-white bg-opacity-30  flex justify-center items-center gap-x-16 text-stone-600 m-10 rounded-lg"data-aos="fade-right"
