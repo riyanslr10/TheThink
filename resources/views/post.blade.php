@@ -153,7 +153,5 @@
                     console.error('There was a problem fetching the book details:', error);
                 });
         }
-
-        }
     </script>
 @endsection

@@ -32,9 +32,11 @@ Route::get('/', function () {
 // halaman post buku
 Route::get('/posts', [PostController::class, 'index']);
 // Halaman Single Post
-Route::get('/post/{post:slug}', [PostController::class, 'show']);
+Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 // Single API Google Books
 Route::get('/book-detail/{bookId}', [BookController::class, 'showDetail'])->name('book-detail');
+// ascm untuk pdf
+Route::get('/get-direct-pdf-link', [BookController::class, 'getDirectPDFLink']);
 
 
 

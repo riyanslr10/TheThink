@@ -56,8 +56,3 @@
         </ul>
     </div>
 </aside>
-
-
-
-<!-- Tambahkan ini di akhir file untuk memuat script Tailwind CSS -->
-<script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
