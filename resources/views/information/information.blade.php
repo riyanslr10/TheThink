@@ -6,7 +6,7 @@
         {{-- New Release --}}
         <div>
 
-            <h1 class="flex justify-center text-5xl font-bold pb-3 pt-10 text-stone-600 md:pt-28">
+            <h1 class="flex justify-center text-5xl font-bold pb-3 pt-28 text-stone-600 md:pt-28">
                 Fantastic 4
             </h1>
             <div

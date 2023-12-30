@@ -3,7 +3,8 @@
 @section('container')
     <div class="container overflow-hidden">
         <!-- jumbotron -->
-        <div class="relative bg-no-repeat bg-center md:h-[700px] bg-fixed" style="background-image: url('/img/home2.png')">
+        <div class="relative bg-no-repeat bg-center md:h-[700px] bg-fixed pt-20 md:pt-0"
+            style="background-image: url('/img/home2.png') ">
 
             <h1 class="md:pt-72 md:pl-32 pl-5 pt-10 md:text-5xl text-2xl font-bold tracking-tight text-stone-700"
                 data-aos="fade-right"data-aos-duration="1000">
