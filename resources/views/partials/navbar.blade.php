@@ -1,5 +1,6 @@
 <nav class=" shadow-lg relative z-40 overflow-hidden">
-    <div class="bg-white md:fixed w-full flex flex-wrap items-center justify-between py-1 text-center shadow-xl mx-auto">
+    <div
+        class="bg-white fixed md:fixed w-full flex flex-wrap items-center justify-between py-1 text-center shadow-xl mx-auto">
         <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse px-3 ms-12 md:ms-14">
             <img src="/img/logo baru.png" class="h-20" />
             <span class="flex text-2xl sm:text-justify font-bold whitespace-nowrap text-amber-700">TheThink</span>
@@ -15,19 +16,7 @@
                 </svg>
                 <span class="sr-only">Search</span>
             </button>
-            <div class="relative hidden sm:block">
-                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                    </svg>
-                    <span class="sr-only">Search icon</span>
-                </div>
-                <input type="text" id="search-navbar"
-                    class="block w-full mt-1 p-2 ps-10 text-sm text-gray-900 border border-gray-100 rounded-lg bg-gray-50 focus:ring-orange-400 focus:border-orange-400  dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-orange-400 dark:focus:border-orange-400"
-                    placeholder="Search...">
-            </div>
+
             <button data-collapse-toggle="navbar-search" type="button"
                 class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-900 rounded-lg bg-orange-200 lg:hidden hover:translate-x-1"
                 aria-controls="navbar-search" aria-expanded="false">
@@ -43,18 +32,7 @@
 
         </div>
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 " id="navbar-search">
-            <div class="relative mt-3 md:hidden">
-                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                    </svg>
-                </div>
-                <input type="text" id="search-navbar"
-                    class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-amber-600 focus:border-amber-600 "
-                    placeholder="Search...">
-            </div>
+
             <ul
                 class="md:hidden lg:flex flex-col p-4 sm:p-0 mt-4  font-bold border border-gray-100 rounded-sm sm:space-x-8 rtl:space-x-reverse sm:flex-row sm:mt-0 sm:border-0  sm:pl-10 text-center">
                 <li>
@@ -126,8 +104,7 @@
                                     <p class="text-sm text-gray-900 dark:text-white" role="none">
                                         {{ auth()->user()->name }}
                                     </p>
-                                    <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
-                                        role="none">
+                                    <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
                                         {{ auth()->user()->email }}
                                     </p>
                                 </div>

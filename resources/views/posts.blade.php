@@ -3,7 +3,7 @@
 @section('container')
 
     <div class="container ">
-        <h1 class="flex justify-center  text-center text-3xl md:text-4xl font-bold pt-10 md:pt-28  text-stone-600 ms-4">
+        <h1 class="flex justify-center  text-center text-3xl md:text-4xl font-bold pt-28 md:pt-28  text-stone-600 ms-4">
             {{ $title }}
         </h1>
 
@@ -22,15 +22,11 @@
                     @endif
 
                     {{-- Ikon pencarian --}}
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 my-auto m-2" style="color: gray" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M21 21l-6–6m2–5a7 7 0 11–14 0 7 7 0 0114 0z" />
-                    </svg>
+
 
                     {{-- Input untuk memasukkan teks pencarian --}}
-                    <input type="text" placeholder="Search" id="searchInput" class="w-full focus:outline-none"
-                        name="search">
+                    <input type="text" placeholder="Search" id="searchInput"
+                        class="w-full focus:outline-none focus:border-4 rounded-lg " name="search">
                 </form>
             </div>
         </div>
@@ -89,5 +85,58 @@
         {{ $posts->links('/partials/custom-pagination-links-view') }}
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+
+    </div>
+
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function(event) {
+            const searchQuery = event.target.value.trim();
+            liveSearch(searchQuery);
+        });
+
+        function liveSearch(query) {
+            const apiKey = 'AIzaSyBABpwxgQN1twS1bi6YM6AdWsSzzjCXKhc'; // Ganti dengan API Key Google Books Anda
+            const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apiKey}`;
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    displayBooks(data.items);
+                })
+                .catch(error => {
+                    console.error('There was a problem fetching the data:', error);
+                });
+        }
+
+        function displayBooks(books) {
+            const bookContainer = document.getElementById('bookList');
+            bookContainer.innerHTML = '';
+
+            books.forEach(book => {
+                const bookCard = `
+                <div class="card w-full bg-orange-100 border-4 border-orange-200 rounded-lg shadow hover:bg-orange-200 hover:border-orange-300 mb-4 ml-10 overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
+                    <img class="object-cover w-full rounded-t-lg h-48 md:h-64 lg:h-80 xl:h-96" src="${book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : 'https://via.placeholder.com/150'}" alt="${book.volumeInfo.title}">
+                    <div class="p-4 pt-12 leading-normal">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-stone-600 dark:text-white">${book.volumeInfo.title}</h5>
+                        <h5 class="mb-2 text-md font-bold tracking-tight text-stone-600 dark:text-white">
+                            Penulis: ${book.volumeInfo.authors ? book.volumeInfo.authors.join(', ') : 'Tidak ada informasi'}
+                        </h5>
+                        <a href="/book-detail/${book.id}">
+                        <button type="button"class="text-white bg-orange-300 hover:bg-orange-400 focus:ring-4 focus:ring-orange-500 rounded-lg text-lg font-extrabold px-3 py-2.5 me-2 mb-2 mr-20 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                            DETAIL
+                        </button>
+                        </a>
+                    </div>
+                </div>  
+            `;
+                bookContainer.innerHTML += bookCard;
+            });
+        }
+    </script>
+
 @endsection

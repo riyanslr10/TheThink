@@ -31,7 +31,5 @@
     <script>
         AOS.init();
     </script>
-    <!-- Tambahkan script Alpine.js -->
-</body>
-
+  </body>
 </html>

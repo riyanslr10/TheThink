@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="container pt-10 md:pt-28">
+    <div class="container pt-28 md:pt-28">
         <h1 class="text-3xl font-bold text-center text-stone-600 mb-7   px-6 md:mx-20 lg:mx-60">
             Select the category you are interested in
         </h1>
