@@ -4,11 +4,12 @@ use App\Models\Category;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\DashboardPostController;
 
 
 /*
@@ -32,8 +33,11 @@ Route::get('/', function () {
 Route::get('/posts', [PostController::class, 'index']);
 // Halaman Single Post
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
+// Single API Google Books
+Route::get('/book-detail/{bookId}', [BookController::class, 'showDetail'])->name('book-detail');
 
-Route::get('/search', [PostController::class, 'search'])->name('posts.search');
+
+
 
 //Halaman info
 Route::get('/info', function () {
@@ -67,7 +71,7 @@ Route::get('/dashboard', function(){
     return view('dashboard.index');
 });
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
-Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
+Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('admin');
 
 
 

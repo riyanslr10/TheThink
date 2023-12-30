@@ -41,6 +41,11 @@
                     </article>
                 </div>
             </a>
+            
+            <div id="bookDetails">
+                <!-- Detail buku akan ditampilkan di sini -->
+            </div>
+            
 
         </div>
     </div>
@@ -72,12 +77,9 @@
             doc.setFont('Times New Roman', 'normal');
             doc.setFontSize(12);
 
-            // Memasukkan data post ke PDF dengan format novel
-            doc.text(' {{ $post->title }}', 10, yPos);
-            yPos += lineSpacing * 2; // Spasi tambahan setelah judul
-
-            doc.text('Author: {{ $post->author }}', 10, yPos);
-            yPos += lineSpacing;
+        // Memasukkan data post ke PDF dengan format novel
+        doc.text(' {{ $post->title }}', 10, yPos);
+        yPos += lineSpacing * 2; // Spasi tambahan setelah judul
 
             doc.text('Post Author: {{ $post->postauthor }}', 10, yPos);
             yPos += lineSpacing;
@@ -117,8 +119,42 @@
                 }
             });
 
-            // Mengunduh PDF
-            doc.save('{{ $post->title }}.pdf');
-        }
-    </script>
+        // Mengunduh PDF
+        doc.save('{{ $post->title }}.pdf');
+    }
+
+
+    // API Google
+
+    function showBookDetails(bookId) {
+    const apiKey = 'AIzaSyBABpwxgQN1twS1bi6YM6AdWsSzzjCXKhc'; // Ganti dengan API Key Google Books Anda
+    const url = `https://www.googleapis.com/books/v1/volumes/${bookId}?key=${apiKey}`;
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const bookDetails = `
+                <h2>${data.volumeInfo.title}</h2>
+                <p><strong>Authors:</strong> ${data.volumeInfo.authors ? data.volumeInfo.authors.join(', ') : 'Unknown'}</p>
+                <p><strong>Description:</strong> ${data.volumeInfo.description ? data.volumeInfo.description : 'No description available'}</p>
+                <!-- Tambahkan info lain yang ingin ditampilkan -->
+            `;
+
+            // Tempatkan data buku ke dalam elemen dengan ID tertentu di HTML
+            const bookDetailsContainer = document.getElementById('bookDetails');
+            bookDetailsContainer.innerHTML = bookDetails;
+        })
+        .catch(error => {
+            console.error('There was a problem fetching the book details:', error);
+        });
+}
+
+}
+
+</script>
 @endsection
