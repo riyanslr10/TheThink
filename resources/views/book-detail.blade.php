@@ -52,31 +52,64 @@
             });
     }
 
-    function downloadPDF(pdfLink, bookTitle) {
-        fetch(pdfLink)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.blob();
-            })
-            .then(blob => {
-                if (blob.size === 0) {
-                    throw new Error('Received empty blob');
-                }
-                
-                const blobURL = URL.createObjectURL(blob);
-                const anchor = document.createElement('a');
-                anchor.href = blobURL;
-                anchor.download = `${bookTitle}.pdf`;  // Menggunakan judul buku untuk nama file
-                anchor.click();
-                URL.revokeObjectURL(blobURL);
-            })
-            .catch(error => {
-                console.error('Error fetching or downloading PDF:', error);
-                alert('Gagal mengunduh PDF. Silakan coba lagi.');
-            });
+    function showLoadingIndicator() {
+    // Tambahkan logika untuk menampilkan indikator loading
+    const loadingIndicator = document.getElementById('loadingIndicator');
+    if (loadingIndicator) {
+        loadingIndicator.style.display = 'block';
     }
+}
+
+function hideLoadingIndicator() {
+    // Tambahkan logika untuk menyembunyikan indikator loading
+    const loadingIndicator = document.getElementById('loadingIndicator');
+    if (loadingIndicator) {
+        loadingIndicator.style.display = 'none';
+    }
+}
+
+function downloadPDF(pdfLink, bookTitle) {
+    // Tampilkan indikator loading
+    showLoadingIndicator();
+
+    fetch(pdfLink)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.blob();
+        })
+        .then(blob => {
+            if (blob.size === 0) {
+                throw new Error('Received empty blob');
+            }
+            
+            const blobURL = URL.createObjectURL(blob);
+            const anchor = document.createElement('a');
+            anchor.href = blobURL;
+            anchor.download = `${bookTitle}.pdf`;
+            
+            // Trigger klik pada anchor untuk memulai unduhan
+            document.body.appendChild(anchor);
+            anchor.click();
+            document.body.removeChild(anchor);
+
+            // Sembunyikan indikator loading
+            hideLoadingIndicator();
+            
+            // Berikan feedback ke pengguna bahwa unduhan berhasil
+            alert('PDF berhasil diunduh!');
+        })
+        .catch(error => {
+            console.error('Error fetching or downloading PDF:', error);
+            
+            // Sembunyikan indikator loading
+            hideLoadingIndicator();
+
+            // Berikan pesan error kepada pengguna
+            alert('Gagal mengunduh PDF. Silakan coba lagi.');
+        });
+}
 
     // Panggil fungsi untuk menampilkan detail buku
     showBookDetails('{{ $bookId }}');

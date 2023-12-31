@@ -1,4 +1,4 @@
-@extends('layouts.main')
+	@extends('layouts.main')
 
 @section('container')
     <div class="container pt-28 md:pt-28">
@@ -12,10 +12,6 @@
                 <div
                     class="w-full sm:w-[300px]  border border-orange-400 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mb-8">
                     <div class="flex flex-col">
-                        <img class="w-full h-[200px] rounded-t-lg shadow-lg object-cover " @if ($category->image)
-                        <img class="object-cover w-full rounded-t-lg h-48 md:h-64 lg:h-80 xl:h-96"
-                            src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}">
-                    @else
                         <img class="object-cover w-full h-[200px] rounded-t-lg shadow-lg hover:scale-105 transition-transform duration-300"
                             src="https://source.unsplash.com/500x500?{{ $category->name }}" alt="{{ $category->name }}" />
                         <div class="flex justify-center pt-5">
