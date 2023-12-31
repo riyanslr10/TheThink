@@ -1,7 +1,8 @@
 @extends('dashboard.layouts.main')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.min.css" />
 
 @section('container')
+
+
 <div class="p-4 sm:ml-64">
 
     <div class="py-20 font-extrabold text-4xl ">
@@ -23,13 +24,14 @@
             </div>
             <div class="mb-4">
                 <label for="slug" class="block text-lg font-medium text-stone-900">Slug</label>
-                <input type="text" class="mt-1 p-2 w-full border rounded-md @error('slug') border-red-500 @enderror" id="slug" name="slug" required value="{{ old('slug') }}">
-                @error('slug')
-                <div class="text-red-500 mt-2">
-                    {{ $message }}
+                <input type="text" class="mt-1 p-2 w-full border rounded-md @error ('slug') is-invalid @enderror" id="slug" name="slug" required value="{{ old('slug') }}">
+                @error ('slug') 
+                <div class="invalid-feedbac">
+                  {{ $message }}
                 </div>
                 @enderror
-            </div>
+              </div>
+      
             <div class="mb-4">
                 <label for="category_id" class="block text-lg font-medium text-stone-900">Category</label>
                 <select class="mt-1 p-2 w-full border rounded-md" name="category_id">
@@ -90,10 +92,10 @@
             </div>
             
             <div class="mb-4">
-                <label for="image" class="block text-lg font-medium text-stone-900">Post Image</label>
+                <label for="imageC" class="block text-lg font-medium text-stone-900">Post Image</label>
                 <img class="hidden img-preview mt-2">
-                <input class="mt-1 p-2 w-full rounded-md @error('image') border-red-500 @enderror" type="file" id="image" name="image" onchange="previewImage()">
-                @error('image')
+                <input class="mt-1 p-2 w-full rounded-md @error('imageC') border-red-500 @enderror" type="file" id="imageC" name="imageC" onchange="previewImage()">
+                @error('imageC')
                 <div class="text-red-500 mt-2">
                     {{ $message }}
                 </div>
@@ -113,64 +115,28 @@
 
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.min.js"></script>
-
     <script>
-  const title = document.querySelector('#title');
-const slug = document.querySelector('#slug');
+        const title = document.querySelector('#title');
+        const slug = document.querySelector('#slug');
 
-title.addEventListener('change', function() {
-    fetch('/dashboard/posts/checkSlug?title=' + title.value)
-        .then(response => response.json())
-        .then(data => slug.value = data.slug)
-});
+        title.addEventListener('change', function() {
+          fetch('/dashboard/posts/checkSlug?title=' + title.value)
+            .then(response => response.json())
+            .then(data => slug.value = data.slug)
+        });
 
-document.addEventListener('trix-file-accept', function(e) {
-    e.preventDefault(); // Mencegah pengguna untuk mengunggah file
-});
+        function previewImage(){
+          const image = document.querySelector('#imageC');
+          const imgPreview = document.querySelector('.img-preview');
 
-ocument.addEventListener('DOMContentLoaded', function() {
-    // Menemukan toolbar dari editor Trix
-    let toolbar = document.querySelector("trix-toolbar");
-    
-    if (toolbar) {
-        // Mengidentifikasi tombol "Attach File" berdasarkan teksnya atau atribut lainnya
-        let attachButton = toolbar.querySelector('button.trix-button[title="Attach files"]');
-        
-        if (attachButton) {
-            // Menghapus tombol "Attach File" dari DOM
-            attachButton.remove();
-        }
-    }
-});
+          imgPreview.style.display = 'block';
 
-document.addEventListener('trix-file-accept', function(e) {
-    const acceptedTypes = ['image/jpeg', 'image/png', 'image/gif']; // Jenis-jenis file gambar yang diizinkan
-    if (!acceptedTypes.includes(e.file.type)) {
-        e.preventDefault(); // Mencegah pengguna untuk mengunggah file selain gambar
-    }
-});
+          const oFReader = new FileReader();
+          oFReader.readAsDataURL(image.files[0]);
 
-// Menentukan editor Trix hanya dapat menerima file gambar
-document.addEventListener('trix-initialize', function() {
-    const trixInput = document.querySelector('trix-editor');
-    trixInput.setAttribute('data-trix-accept-file-types', 'image/jpeg,image/png,image/gif');
-});
-
-
-        function previewImage() {
-            const image = document.querySelector('#image');
-            const imgPreview = document.querySelector('.img-preview');
-
-            imgPreview.classList.remove('hidden');
-            imgPreview.classList.add('block');
-
-            const oFReader = new FileReader();
-            oFReader.readAsDataURL(image.files[0]);
-
-            oFReader.onload = function(oFREvent) {
-                imgPreview.src = oFREvent.target.result;
-            }
+          oFReader.onload = function(oFREvent){
+            imgPreview.src = oFREvent.target.result;
+          }
         }
     </script>
 

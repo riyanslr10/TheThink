@@ -12,11 +12,15 @@
                 <div
                     class="w-full sm:w-[300px]  border border-orange-400 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mb-8">
                     <div class="flex flex-col">
-                        <img class="w-full h-[200px] rounded-t-lg shadow-lg object-cover "
+                        <img class="w-full h-[200px] rounded-t-lg shadow-lg object-cover " @if ($category->image)
+                        <img class="object-cover w-full rounded-t-lg h-48 md:h-64 lg:h-80 xl:h-96"
+                            src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}">
+                    @else
+                        <img class="object-cover w-full h-[200px] rounded-t-lg shadow-lg hover:scale-105 transition-transform duration-300"
                             src="https://source.unsplash.com/500x500?{{ $category->name }}" alt="{{ $category->name }}" />
                         <div class="flex justify-center pt-5">
                             <a href="/posts?category={{ $category->slug }}"
-                                class=" px-6 py-2 text-2xl font-bold text-center text-stone-600 rounded-lg focus:ring-4 focus:outline-none focus:ring-orange-300 dark:bg-orange-300 dark:hover:bg-orange-400 dark:focus:ring-orange-400  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                                class="w-full px-6 py-2 text-lg font-bold text-center text-stone-600 bg-orange-300 bg-opacity-80 hover:bg-orange-400 rounded-lg focus:ring-4 focus:outline-none focus:ring-orange-300 dark:bg-orange-300 dark:hover:bg-orange-400 dark:focus:ring-orange-400 shadow-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                                 {{ $category->name }}
                             </a>
                         </div>

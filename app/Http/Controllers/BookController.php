@@ -14,14 +14,38 @@ class BookController extends Controller
 
         $response = Http::get($url);
 
-        // Cek apakah respons dari API berhasil (kode status 200-299)
         if ($response->successful()) {
             $book = $response->json();
-            // Kembalikan tampilan dengan data buku dan bookId
-            return view('book-detail', compact('book', 'bookId'));
+
+            // Ambil tautan ACSM dari data buku jika tersedia
+            $acsmLink = $book['pdf']['acsTokenLink'] ?? null;
+
+            // Jika tautan ACSM ditemukan, proses untuk mendapatkan tautan PDF yang sebenarnya
+            if ($acsmLink) {
+                $directPDFLink = $this->getDirectPDFLink($acsmLink);
+            } else {
+                $directPDFLink = null;
+            }
+
+            // Kembalikan tampilan dengan data buku, bookId, dan tautan PDF langsung (jika tersedia)
+            return view('book-detail', compact('book', 'bookId', 'directPDFLink'));
         }
 
         // Jika respons dari API gagal, kembalikan respons error 404
         return abort(404);
     }
+
+    public function getDirectPDFLink(Request $request)
+{
+    $acsmLink = $request->query('acsmLink');
+
+    // Di sini, Anda perlu memproses tautan ACSM untuk mendapatkan tautan PDF sebenarnya.
+    // Untuk contoh sederhana, saya akan mengembalikan tautan ACSM langsung.
+    // Namun, dalam implementasi sebenarnya, Anda perlu mengakses server Adobe Content Server untuk mendapatkan tautan PDF yang sebenarnya.
+
+    // Anda bisa melakukan implementasi sesuai dengan kebutuhan Anda di sini.
+    return response()->json(['directPDFLink' => $acsmLink]);
+}
+
+
 }
