@@ -17,8 +17,9 @@ class AdminCategoryController extends Controller
      */
     public function index()
     {
+        
         return view('dashboard.categories.index', [
-            'categories' => Category::all()
+            $category = Category::all() // Misalnya, Anda mengambil semua kategori dari model Category
         ]);
 
         

@@ -115,7 +115,7 @@ class DashboardPostController extends Controller
             $validateData['image'] = $request->file('image')->store('post-images');
         }
     
-        $validateData['user_id'] = auth()->user()->id;
+            $validateData['user_id'] = auth()->user()->id;
         $validateData['excerpt'] = Str::limit(strip_tags($request->body), 200);
     
         Post::where('id', $post->id)->update($validateData);
@@ -139,7 +139,8 @@ class DashboardPostController extends Controller
 
     public function checkSlug(Request $request)
     {
-        $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
+        $slug = SlugService::createSlug(Category::class, 'slug', $request->title);
+
         return response()->json(['slug' => $slug]);
     }
 

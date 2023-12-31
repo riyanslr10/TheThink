@@ -17,11 +17,23 @@
                 <p class="text-sm text-red-500">{{ $message }}</p>
                 @enderror
             </div>
+
             <div class="mb-3">
                 <label for="slug" class="block text-sm font-medium text-gray-700">Slug</label>
                 <input type="text" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md " id="slug" name="slug" readonly required value="{{ old('slug') }}">
                 @error('slug')
                 <p class="text-sm text-red-500">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div class="mb-4">
+                <label for="image" class="block text-lg font-medium text-stone-900">Category Image</label>
+                <img class="hidden img-preview mt-2">
+                <input class="mt-1 p-2 w-full rounded-md @error('image') border-red-500 @enderror" type="file" id="image" name="image" onchange="previewImage()">
+                @error('image')
+                <div class="text-red-500 mt-2">
+                    {{ $message }}
+                </div>
                 @enderror
             </div>
 
@@ -38,6 +50,20 @@
                 .then(response => response.json())
                 .then(data => slug.value = data.slug)
         });
+
+        function previewImage(){
+          const image = document.querySelector('#image');
+          const imgPreview = document.querySelector('.img-preview');
+
+          imgPreview.style.display = 'block';
+
+          const oFReader = new FileReader();
+          oFReader.readAsDataURL(image.files[0]);
+
+          oFReader.onload = function(oFREvent){
+            imgPreview.src = oFREvent.target.result;
+          }
+        }
     </script>
 
 @endsection

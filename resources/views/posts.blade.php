@@ -70,6 +70,16 @@
         @endif
     </div>
 
+        {{-- Card Books API --}}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-7 pt-2" id="bookList">
+            {{-- Card Books akan ditampilkan di sini --}}
+        </div>
+        
+        {{-- Daftar Buku dari Google Books --}}
+        <div id="searchResults" class="flex justify-center mt-4"></div>
+    
+    </div>
+
     <div class="flex  justify-center pt-10 pb-10  ">
         {{ $posts->links('/partials/custom-pagination-links-view') }}
     </div>

@@ -92,10 +92,10 @@
             </div>
             
             <div class="mb-4">
-                <label for="imageC" class="block text-lg font-medium text-stone-900">Post Image</label>
+                <label for="image" class="block text-lg font-medium text-stone-900">Post Image</label>
                 <img class="hidden img-preview mt-2">
-                <input class="mt-1 p-2 w-full rounded-md @error('imageC') border-red-500 @enderror" type="file" id="imageC" name="imageC" onchange="previewImage()">
-                @error('imageC')
+                <input class="mt-1 p-2 w-full rounded-md @error('image') border-red-500 @enderror" type="file" id="image" name="image" onchange="previewImage()">
+                @error('image')
                 <div class="text-red-500 mt-2">
                     {{ $message }}
                 </div>
@@ -126,7 +126,7 @@
         });
 
         function previewImage(){
-          const image = document.querySelector('#imageC');
+          const image = document.querySelector('#image');
           const imgPreview = document.querySelector('.img-preview');
 
           imgPreview.style.display = 'block';
