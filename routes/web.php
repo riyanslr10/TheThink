@@ -25,14 +25,13 @@ use App\Http\Controllers\DashboardPostController;
 
 
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [PostController::class, 'home']);
+
 
 // halaman post buku
 Route::get('/posts', [PostController::class, 'index']);
 // Halaman Single Post
-Route::get('/posts/{post:slug}', [PostController::class, 'show']);
+Route::get('/post/{post:slug}', [PostController::class, 'show']);
 // Single API Google Books
 Route::get('/book-detail/{bookId}', [BookController::class, 'showDetail'])->name('book-detail');
 // ascm untuk pdf
