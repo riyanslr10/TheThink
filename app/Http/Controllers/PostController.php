@@ -2,29 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Post;
-use App\Models\User;
 class PostController extends Controller
 {
     public function index(Request $request)
     {  
         $title = '';
 
-        // if($request->has('category')) {
-        //     $category = Category::firstWhere('slug', $request->category);
-        //     if($category) {
-        //         $title = ' in ' . $category->name;
-        //     }
-        // }
-
-        // if($request->has('postauthor')) {
-        //     $postauthor = User::firstWhere('name', $request->postauthor);
-        //     if($postauthor) {
-        //         $title = ' by ' . $postauthor->name;
-        //     }
-        // }
 
         $posts = Post::latest()
             ->filter($request->only(['search', 'category', 'postauthor']))
@@ -44,4 +29,17 @@ class PostController extends Controller
             "post" => $post
         ]);
     }
+
+        // Menambahkan fungsi untuk home view
+        public function home()
+        {
+            // Ambil 6 post terbaru untuk ditampilkan di halaman home
+            $latestPosts = Post::latest()->take(3)->get();
+    
+            // Mengirim data ke view 'home'
+            return view('home', [
+                "title" => "Home Page",
+                "latestPosts" => $latestPosts
+            ]);
+        }
 }

@@ -12,18 +12,7 @@
                 {{-- Form Pencarian --}}
                 <form action="/posts" method="GET" id="searchForm"
                     class="flex justify-center mx-auto w-full xl:w-3/4 lg:w-11/12 my-5 rounded-s-xl p-2">
-                    {{-- Input Hidden untuk Kategori dan Penulis Posting --}}
-                    @if (request('category'))
-                        <input type="hidden" name="category" value="{{ request('category') }}">
-                    @endif
-
-                    @if (request('postauthor'))
-                        <input type="hidden" name="postauthor" value="{{ request('postauthor') }}">
-                    @endif
-
-                    {{-- Ikon pencarian --}}
-
-
+        
                     {{-- Input untuk memasukkan teks pencarian --}}
                     <input type="text" placeholder="Search" id="searchInput"
                         class="w-full focus:outline-none focus:border-4 rounded-lg " name="search">
