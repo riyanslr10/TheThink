@@ -6,7 +6,8 @@
     aria-label="Sidebar">
     <div class="h-full px- pb-4 overflow-y-auto bg-white dark:bg-gray-800">
         <ul class=" font-medium mt-2">
-            <li class=" border-b-2 border-b-orange-200">
+            <li
+                class=" border-b-2 border-b-orange-200 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                 <a href="/dashboard"
                     class="nav-link {{ request()->is('dashboard') ? 'active' : '' }} flex items-center p-4 text-gray-900 rounded-lg dark:text-white hover:bg-orange-200 border-4 border-white focus:border-orange-300 dark:hover:bg-gray-700 group  ">
                     <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -16,7 +17,7 @@
                         <path
                             d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
                     </svg>
-                    <span class="ms-3 text-lg font-bold">Dashboard</span>
+                    <span class="ms-3 text-lg font-bold ">Dashboard</span>
                 </a>
             </li>
 
@@ -28,7 +29,8 @@
                  <span class="flex-1 ms-3 whitespace-nowrap">Users</span>
               </a>
            </li> --}}
-            <li class="border-b-orange-200 border-b-2">
+            <li
+                class="border-b-orange-200 border-b-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                 <a href="/dashboard/posts"
                     class="nav-link {{ request()->is('api/dashboard/posts*') ? 'active' : '' }} flex items-center p-4 text-gray-900 rounded-lg dark:text-white hover:bg-orange-200 border-4 border-white focus:border-orange-300 dark:hover:bg-gray-700 group">
                     <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -41,7 +43,8 @@
             </li>
 
             @can('admin')
-                <li class="border-b-orange-200 border-b-2">
+                <li
+                    class="border-b-orange-200 border-b-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                     <a href="/dashboard/categories"
                         class="nav-link {{ Request::is('dashboard/categories*') ?: '' }} flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-orange-200 border-4 border-white focus:border-orange-300 dark:hover:bg-gray-700 group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -54,6 +57,5 @@
                 </li>
             @endcan
         </ul>
-     </div>
-  </aside>
-  
+    </div>
+</aside>

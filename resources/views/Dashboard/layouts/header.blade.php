@@ -47,10 +47,10 @@
                                     {{ auth()->user()->email }}
                                 </p>
                             </div>
-                            <ul class="py-1" role="none">
+                            <ul class="py-1 overflow-hidden" role="none">
                                 <li>
                                     <a href="/"
-                                        class="block px-20 py-2 text-sm text-gray-700 hover:bg-orange-200 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        class="block px-20 py-2 text-lg font-bold text-gray-700 hover:bg-orange-200 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
                                         role="menuitem">Home</a>
                                 </li>
                                 <li>
@@ -58,7 +58,7 @@
                                         @csrf
 
                                         <button type="submit"
-                                            class="block px-20 py-2 text-sm text-gray-700 hover:bg-orange-200 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white">
+                                            class="block px-20 py-2 text-lg font-bold text-gray-700 hover:bg-orange-200 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                                             Logout
                                         </button>
                                     </form>

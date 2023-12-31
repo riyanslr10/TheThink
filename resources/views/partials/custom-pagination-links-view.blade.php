@@ -1,6 +1,7 @@
 <!-- custom-pagination-links-view.blade.php -->
 
-<ul class="custom-pagination flex text-stone-600 font-bold p-3 text-lg border-4 border-orange-200">
+<ul
+    class="custom-pagination flex text-stone-600 font-bold p-3 border-4 border-orange-200 text-3xl gap-5 bor bg-orange-200">
     @if ($paginator->onFirstPage())
         <li class="disabled " aria-disabled="true" aria-label="@lang('pagination.previous')">
             <span aria-hidden="true">&lsaquo;</span>
@@ -15,14 +16,14 @@
     @foreach ($elements as $element)
         {{-- "Three Dots" Separator --}}
         @if (is_string($element))
-            <li class="disabled px-3" aria-disabled="true"><span>{{ $element }}</span></li>
+            <li class="disabled px-3 " aria-disabled="true"><span>{{ $element }}</span></li>
         @endif
 
         {{-- Array Of Links --}}
         @if (is_array($element))
             @foreach ($element as $page => $url)
                 @if ($page == $paginator->currentPage())
-                    <li class="active bg-orange-200
+                    <li class="active text-amber-700 
                     px-3" aria-current="page">
                         <span>{{ $page }}</span>
                     </li>

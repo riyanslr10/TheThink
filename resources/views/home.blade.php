@@ -6,12 +6,12 @@
             <div class="relative bg-no-repeat bg-center md:h-[700px] bg-fixed pt-20 md:pt-0"
                 style="background-image: url('/img/home2.png') ">
 
-                <h1 class="md:pt-72 md:pl-32 pl-5 pt-10 md:text-5xl text-2xl font-bold tracking-tight text-stone-700"
+                <h1 class="md:pt-32 md:pl-32 pl-5  md:text-5xl text-2xl font-bold tracking-tight text-stone-700"
                     data-aos="fade-right"data-aos-duration="1000">
                     Welcome to <span class="text-amber-700"> The Think</span> Library!
                 </h1>
-                <h1 class="md:pl-32 pl-5 md:text-4xl text-1x1 pb-5 font-bold tracking-tight text-stone-700" data-aos="fade-right"
-                    data-aos-duration="1000">
+                <h1 class="md:pl-32 pl-5 md:text-4xl text-1x1 pb-5 font-bold tracking-tight text-stone-700"
+                    data-aos="fade-right" data-aos-duration="1000">
                     Explore Our Latest Collections
                 </h1>
                 <a href="/posts">
@@ -99,62 +99,106 @@
                     New Release Books
                 </h1>
                 @if ($latestPosts->count() > 0)
-                <div class="grid grid-cols-1 bg-no-repeat bg-center bg-cover lg:h-[600px] md:grid-cols-1 lg:grid-cols-3 pb-[50px] bg-orange-200">
-                    {{-- 1 --}}
-                    @foreach ($latestPosts as $post)
-                    <section class="bg-white bg-opacity-30  flex justify-center items-center gap-x-16 text-stone-600 m-10 rounded-lg"data-aos="fade-right"
-                        data-aos-duration="1000">
-                        <div class="w-[300px] h-[420px] bg-transparent cursor-pointer group perspective">
-                            <div class="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
-                                <div class="absolute backface-hidden border-2 w-full h-full">
-                                    @if ($post->image)
-                                    <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" class="w-full h-full" />
-                                    @else    
-                                    <img src="https://source.unsplash.com/400x200?{{ $post->category->name }}" alt="{{ $post->title }}" class="w-full h-full" />                                       
-                                   @endif
-                                </div>
-                                <div
-                                    class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-orange-200 overflow-hidden border-8 border-orange-400">
+                    <div
+                        class="grid grid-cols-1 bg-no-repeat bg-center bg-cover lg:h-[600px] md:grid-cols-1 lg:grid-cols-3 pb-[50px] bg-orange-200">
+                        {{-- 1 --}}
+                        @foreach ($latestPosts as $post)
+                            <section
+                                class="bg-white bg-opacity-30  flex justify-center items-center gap-x-16 text-stone-600 m-10 rounded-lg"data-aos="fade-right"
+                                data-aos-duration="1000">
+                                <div class="w-[300px] h-[420px] bg-transparent cursor-pointer group perspective">
                                     <div
-                                        class="text-center flex flex-col items-center justify-center h-full text-stone-600 px-2 pb-24">
-                                        <h1 class="text-3xl font-extrabold">{{ $post->title }}</h1>
-                                        <p class="my-2 font-medium">{{ $post->author }}</p> {{ $post->created_at->diffForHumans() }}
-                                        <p>
-                                            {{ Str::limit($post->description, 100) }}
-                                        </p>
-                                        <a href="/post/{{ $post->slug }}">
-                                        <button
-                                            class="bg-orange-300 px-6 py-2 font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-20 scale-0 group-hover:scale-125">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
-                                            viewBox="0 0 36 36" class="inline-block">
-                                            <path fill="currentColor"
-                                                d="M32 6H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m0 22H4V8h28Z"
-                                                class="clr-i-outline clr-i-outline-path-1" />
-                                            <path fill="currentColor" d="M9 14h18a1 1 0 0 0 0-2H9a1 1 0 0 0 0 2"
-                                                class="clr-i-outline clr-i-outline-path-2" />
-                                            <path fill="currentColor" d="M9 18h18a1 1 0 0 0 0-2H9a1 1 0 0 0 0 2"
-                                                class="clr-i-outline clr-i-outline-path-3" />
-                                            <path fill="currentColor" d="M9 22h10a1 1 0 0 0 0-2H9a1 1 0 0 0 0 2"
-                                                class="clr-i-outline clr-i-outline-path-4" />
-                                            <path fill="none" d="M0 0h36v36H0z" />
-                                        </svg>
-                                            Detail Books
-                                        </button>
-                                        </a>
+                                        class="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
+                                        <div class="absolute backface-hidden border-2 w-full h-full">
+                                            @if ($post->image)
+                                                <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}"
+                                                    class="w-full h-full" />
+                                            @else
+                                                <img src="https://source.unsplash.com/400x200?{{ $post->category->name }}"
+                                                    alt="{{ $post->title }}" class="w-full h-full" />
+                                            @endif
+                                        </div>
+                                        <div
+                                            class="absolute my-rotate-y-180 backface-hidden w-full h-full bg-orange-200 overflow-hidden border-8 border-orange-400">
+                                            <div
+                                                class="text-center flex flex-col items-center justify-center h-full text-stone-600 px-2 pb-24">
+                                                <h1 class="text-3xl font-extrabold">{{ $post->title }}</h1>
+                                                <p class="my-2 font-medium">{{ $post->author }}</p>
+                                                {{ $post->created_at->diffForHumans() }}
+                                                <p>
+                                                    {{ Str::limit($post->description, 100) }}
+                                                </p>
+                                                <a href="/post/{{ $post->slug }}">
+                                                    <button
+                                                        class="bg-orange-300  px-6 py-2 mr-24 font-semibold text-white rounded-lg absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-8 scale-0 group-hover:scale-125 ">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                                            height="20" viewBox="0 0 36 36" class="inline-block">
+                                                            <path fill="currentColor"
+                                                                d="M32 6H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m0 22H4V8h28Z"
+                                                                class="clr-i-outline clr-i-outline-path-1" />
+                                                            <path fill="currentColor"
+                                                                d="M9 14h18a1 1 0 0 0 0-2H9a1 1 0 0 0 0 2"
+                                                                class="clr-i-outline clr-i-outline-path-2" />
+                                                            <path fill="currentColor"
+                                                                d="M9 18h18a1 1 0 0 0 0-2H9a1 1 0 0 0 0 2"
+                                                                class="clr-i-outline clr-i-outline-path-3" />
+                                                            <path fill="currentColor"
+                                                                d="M9 22h10a1 1 0 0 0 0-2H9a1 1 0 0 0 0 2"
+                                                                class="clr-i-outline clr-i-outline-path-4" />
+                                                            <path fill="none" d="M0 0h36v36H0z" />
+                                                        </svg>
+                                                        Detail Books
+                                                    </button>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </section>
-                    @endforeach
+                            </section>
+                        @endforeach
                     </div>
-                    @else
+                @else
                     <p class="text-center fs-4 py-16">No post found.</p>
-                    @endif
-                    
+                @endif
+
 
             </div>
 
+            <section
+                class="bg-amber-900 bg-opacity-30  flex justify-center items-center gap-x-16 text-stone-600 pt-9  "data-aos="fade-left"
+                data-aos-duration="1000" data-aos-delay="300">
+
+
+                <div
+                    class="grid mb-8 p-20 border-4 border-orange-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-orange-200 dark:bg-gray-800">
+                    <figure
+                        class="flex flex-col items-center justify-center p-8 text-center bg-blue-400 border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
+                        <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white">Easy To Access
+                            </h3>
+
+                    </figure>
+                    <figure
+                        class="flex flex-col items-center justify-center p-8 text-center bg-red-500 border-b border-gray-200 md:rounded-se-lg dark:bg-gray-800 dark:border-gray-700">
+                        <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                            <h3 class="text-lg font-bold text-white dark:text-white">Various Book Collections</h3>
+
+                    </figure>
+                    <figure
+                        class="flex flex-col items-center justify-center p-8 text-center bg-green-400 border-b border-gray-200 md:rounded-es-lg md:border-b-0 md:border-e dark:bg-gray-800 dark:border-gray-700">
+                        <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                            <h3 class="text-lg font-bold text-white dark:text-white">Free For User</h3>
+
+                    </figure>
+                    <figure
+                        class="flex flex-col items-center justify-center p-8 text-center bg-orange-300 border-gray-200 rounded-b-lg md:rounded-se-lg dark:bg-gray-800 dark:border-gray-700">
+                        <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white">Fast Update</h3>
+
+                    </figure>
+                </div>
+
+            </section>
 
 
         </div>
